@@ -16,3 +16,9 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+
+#codeigniter 4
+/writable
+
+#phpstorm
+/.idea
