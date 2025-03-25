@@ -2,7 +2,7 @@
 $this->extend('_layout.php');
 $this->section('content');
 ?>
-    <p>content home page</p>
+    <p>content reviews page</p>
 <?php
 $this->endSection();
 ?>
