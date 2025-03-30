@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - Dewi Bootstrap Template</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <title><?= $page ?> - <?= lang('Theme.title') ?></title>
+    <meta name="description" content="<?= lang('Seo.' . $handle . '.description') ?>">
+    <meta name="keywords" content="<?= lang('Seo.' . $handle . '.keywords') ?>">
     <!-- Favicons -->
     <link href="<?= base_url('assets/img/favicon.png') ?>" rel="icon">
     <link href="<?= base_url('assets/img/apple-touch-icon.png') ?>" rel="apple-touch-icon">
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="col-md-6 footer-links pt-5">
-                <h4><?= lang('Theme.footer.useful_links') ?></h4>
+                <h3><?= lang('Theme.footer.useful_links') ?></h3>
                 <ul>
                     <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale) ?>"><?= lang('Theme.navigations.home') ?></a></li>
                     <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/instructors') ?>"><?= lang('Theme.navigations.instructors') ?></a></li>

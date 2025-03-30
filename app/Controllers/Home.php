@@ -13,6 +13,8 @@ class Home extends BaseController
     {
         $locale = $this->request->getLocale();
         $data   = [
+            'page'   => lang('Theme.navigations.home'),
+            'handle' => 'home',
             'locale' => $locale
         ];
         return view('home', $data);
@@ -26,6 +28,8 @@ class Home extends BaseController
     {
         $locale = $this->request->getLocale();
         $data   = [
+            'page'   => lang('Theme.navigations.reviews'),
+            'handle' => 'reviews',
             'locale' => $locale
         ];
         return view('reviews', $data);
@@ -39,6 +43,8 @@ class Home extends BaseController
     {
         $locale = $this->request->getLocale();
         $data   = [
+            'page'   => lang('Theme.navigations.instructors'),
+            'handle' => 'instructors',
             'locale' => $locale
         ];
         return view('instructors', $data);
@@ -52,6 +58,8 @@ class Home extends BaseController
     {
         $locale = $this->request->getLocale();
         $data   = [
+            'page'   => lang('Theme.navigations.contact'),
+            'handle' => 'contact',
             'locale' => $locale
         ];
         return view('contact', $data);
