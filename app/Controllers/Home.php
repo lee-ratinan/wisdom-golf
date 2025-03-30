@@ -32,16 +32,16 @@ class Home extends BaseController
     }
 
     /**
-     * Coaches page
+     * Instructors page
      * @return string
      */
-    public function coaches(): string
+    public function instructors(): string
     {
         $locale = $this->request->getLocale();
         $data   = [
             'locale' => $locale
         ];
-        return view('coaches', $data);
+        return view('instructors', $data);
     }
 
     /**

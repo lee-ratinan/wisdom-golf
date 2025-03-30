@@ -1,3 +1,140 @@
-before
-<?= $this->renderSection('content') ?>
-after
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Index - Dewi Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Favicons -->
+    <link href="<?= base_url('assets/img/favicon.png') ?>" rel="icon">
+    <link href="<?= base_url('assets/img/apple-touch-icon.png') ?>" rel="apple-touch-icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/aos/aos.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/fontawesome-free-6.7.2/css/all.min.css') ?>" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
+    <?php /* -- =======================================================
+    * Template Name: Dewi
+    * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    * Updated: Aug 07 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== */ ?>
+</head>
+<body class="index-page">
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+        <a href="<?= base_url() ?>" class="logo d-flex align-items-center me-auto">
+            <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" class="img-fluid">
+        </a>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="<?= base_url($locale) ?>" class=""><?= lang('Theme.navigations.home') ?></a></li>
+                <li><a href="<?= base_url($locale . '/instructors') ?>" class=""><?= lang('Theme.navigations.instructors') ?></a></li>
+                <li><a href="<?= base_url($locale . '/reviews') ?>" class=""><?= lang('Theme.navigations.reviews') ?></a></li>
+                <li><a href="<?= base_url($locale . '/contact') ?>" class=""><?= lang('Theme.navigations.contact') ?></a></li>
+                <li><a href="<?= getenv('BLOG_URL') ?>" class=""><?= lang('Theme.navigations.news') ?></a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+        <a class="cta-btn" href="<?= getenv('CONTACT_LINE') ?>" target="_blank"><i class="fa-brands fa-line"></i></a>
+        <a class="cta-btn" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank"><i class="fa-solid fa-phone"></i></a>
+    </div>
+</header>
+<main class="main">
+    <?= $this->renderSection('content') ?>
+    <!-- CONTACT FORM -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <form action="forms/contact.php" method="post" class="php-email-form aos-init aos-animate" data-aos="fade-up" data-aos-delay="1000">
+                <div class="row gy-4">
+                    <div class="col-12"><h2><i class="fa-regular fa-envelope"></i> <?= lang('Theme.navigations.contact') ?></h2></div>
+                    <div class="col-md-6">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    </div>
+                    <div class="col-md-6 ">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <button type="submit">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-md-6 footer-about">
+                <a href="<?= base_url() ?>" class="logo d-flex align-items-center">
+                    <span class="sitename"><?= lang('Theme.title') ?></span>
+                </a>
+                <div class="footer-contact pt-3">
+                    <p><?= lang('Theme.footer.address_line_1') ?></p>
+                    <p><?= lang('Theme.footer.address_line_2') ?></p>
+                    <p class="mt-3"><strong><?= lang('Theme.footer.phone_label') ?>:</strong> <a href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank"><?= getenv('CONTACT_TEL_LABEL') ?></a></p>
+                    <p><strong><?= lang('Theme.footer.email_label') ?>:</strong> <a href="mailto:<?= getenv('CONTACT_EMAIL') ?>" target="_blank"><?= getenv('CONTACT_EMAIL') ?></a></p>
+                </div>
+                <div class="social-links d-flex mt-4">
+                    <a href="<?= getenv('CONTACT_LINE') ?>" target="_blank"><i class="fa-brands fa-line"></i></a>
+                    <a href="<?= getenv('SOCIAL_FACEBOOK') ?>" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="<?= getenv('SOCIAL_INSTAGRAM') ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="<?= getenv('SOCIAL_TIKTOK') ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="<?= getenv('SOCIAL_YOUTUBE') ?>" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 footer-links pt-5">
+                <h4><?= lang('Theme.footer.useful_links') ?></h4>
+                <ul>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale) ?>"><?= lang('Theme.navigations.home') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/instructors') ?>"><?= lang('Theme.navigations.instructors') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/reviews') ?>"><?= lang('Theme.navigations.reviews') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <?php $year = ('2025' == date('Y') ? '' : ' - ' . date('Y')); ?>
+        <p><?= lang('Theme.footer.copyright', [$year]) ?></p>
+    </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
+<!-- Vendor JS Files -->
+<script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<script src="<?= base_url('assets/vendor/php-email-form/validate.js') ?>"></script>
+<script src="<?= base_url('assets/vendor/aos/aos.js') ?>"></script>
+<script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js') ?>"></script>
+<script src="<?= base_url('assets/vendor/purecounter/purecounter_vanilla.js') ?>"></script>
+<script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js') ?>"></script>
+<script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') ?>"></script>
+<script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js') ?>"></script>
+<!-- Main JS File -->
+<script src="<?= base_url('assets/js/main.js') ?>"></script>
+</body>
+</html>
