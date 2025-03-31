@@ -13,8 +13,8 @@
     <meta property="og:image" content="<?= base_url('img/home-intro.jpg') ?>">
     <meta property="og:url" content="<?= base_url($locale . '/' . ('home' == $handle ? '' : $handle)) ?>">
     <!-- Favicons -->
-    <link href="<?= base_url('assets/img/favicon.png') ?>" rel="icon">
-    <link href="<?= base_url('assets/img/apple-touch-icon.png') ?>" rel="apple-touch-icon">
+    <link href="<?= base_url('img/favicon-180.png') ?>" rel="icon">
+    <link href="<?= base_url('img/favicon-192.png') ?>" rel="apple-touch-icon">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
