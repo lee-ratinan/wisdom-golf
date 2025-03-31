@@ -4,39 +4,39 @@ return [
     'reviews' => [
         [
             'name'    => 'Pongsakon Charoenwathana',
-            'message' => 'The atmosphere is very good. You can learn golf and play a round with Trackman 4.'
+            'message' => '雰囲気はとても良いです。 Trackman4でゴルフを学び、ゴルフをプレイできます。'
         ],
         [
             'name'    => 'Slil Siripong',
-            'message' => 'Nice facilities! The instructor is knowledgeable and attentive. I have learned and improved my skills a lot.'
+            'message' => '素晴らしい施設です！インストラクターは知識が豊富で丁寧です。私は多くのことを学び、自分のスキルを向上させました。'
         ],
         [
             'name'    => 'Seungmin Choi',
-            'message' => 'Pro Toon is a great golf instructor! Very thorough and adapts his program to each student’s unique traits. Highly recommend getting his coaching.'
+            'message' => 'Pro Toon は素晴らしいゴルフ インストラクターです。非常に丁寧で、各生徒の個性に合わせてプログラムを調整します。彼の指導を受けることを強くお勧めします。'
         ],
         [
             'name'    => 'Sunwasu Borirach',
-            'message' => 'The teaching is very good, equipped with modern teaching technology. Easy to understand.'
+            'message' => '授業は非常に良く、最新の教育技術が備わっており、理解しやすいです。'
         ],
         [
             'name'    => 'Philippe Pancrazi',
-            'message' => 'Pro Toon is an experienced instructor who combines performance and simplicity in his teaching. Very good atmosphere in this new golf teaching structure in Bang Na.'
+            'message' => 'Pro Toon は、指導においてパフォーマンスとシンプルさを兼ね備えた経験豊富なインストラクターです。バンナにあるこの新しいゴルフ指導施設の雰囲気はとても良いです。'
         ],
         [
             'name'    => 'Panupong Matangkarat',
-            'message' => 'For those who want to take class and adjust their golf swing, I highly recommend this place. It really works esp. reducing your score.  Comprehensive practice.'
+            'message' => 'Pro Toon は、ゴルフのパフォーマンスと指導のシンプルさを兼ね備えた経験豊富なインストラクターです。バンナにあるこの新しいゴルフ指導施設の雰囲気はとても良いです。'
         ],
         [
             'name'    => 'Ratchawut Chaisubanan',
-            'message' => 'Noticeable improvement in a few lessons'
+            'message' => '数回のレッスンで目立った改善が見られました'
         ],
         [
             'name'    => 'Sasithorn Phitaksinsakul',
-            'message' => 'Pro Toon helps me play golf with more confidence! I started from 0. He taught from the basics, how to hold the club, how to use the power from the legs, the core of the body.  He can see my weakness and helped adjust until I can hit better and better, making golfing much more fun. Learning with Pro Toon is very fun. The explanations are easy to understand. I got good advice.'
+            'message' => 'プロトゥーンのおかげで、もっと自信を持ってゴルフができるようになりました！私はゼロから始めました。彼は基礎から、クラブの持ち方、足の力の使い方、体の芯まで教えてくれました。彼は私の弱点を見抜いて、私がどんどん上手く打てるようになるまで調整を手伝ってくれて、ゴルフがずっと楽しくなりました。プロトゥーンと一緒に学ぶのはとても楽しいです。説明も分かりやすく、良いアドバイスをもらいました。'
         ],
         [
             'name'    => 'Banphot Apibalsri',
-            'message' => 'Pro Toon the Best Golf coach I have ever learned with. Good teaching equipment makes it easy to understand.'
+            'message' => 'プロのトゥーンは私が今まで学んだ中で最高のゴルフコーチです。優れた指導機器により理解が容易になります。'
         ],
     ]
 ];

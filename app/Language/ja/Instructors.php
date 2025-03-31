@@ -3,18 +3,18 @@ return [
     'title'       => 'Our Pros',
     'subtitle'    => 'Meet our certified golf instructors',
     'headers'     => [
-        'languages'    => 'Languages',
-        'certificates' => 'Golf Certificates',
-        'experiences'  => 'Experiences',
-        'tournaments'  => 'Junior Golf Tournament Experiences',
-        'education'    => 'Education',
+        'languages'    => '言語',
+        'certificates' => 'ゴルフ証明書',
+        'experiences'  => '体験談',
+        'tournaments'  => 'ジュニアゴルフトーナメント体験',
+        'education'    => '学歴',
     ],
     'instructors' => [
         [
             'nickname'     => 'Pro Toon',
             'name'         => 'Nuttapong Rianrungruang',
-            'title'        => 'Head Professional',
-            'certified'    => 'Certified Instructor - GI 0593',
+            'title'        => 'ヘッドプロフェッショナル',
+            'certified'    => '認定インストラクター - GI 0593',
             'languages'    => [
                 'th',
                 'us'
@@ -42,15 +42,15 @@ return [
             ],
             'tournaments'  => [],
             'education'    => [
-                'Chulalongkorn University, Sport Science, Bachelor’s Degree',
-                'Golf Academy of America San Diego, Associate of Applied Business Degree (Players Credit)'
+                'チュラロンコーン大学、スポーツ科学、学士号',
+                'ゴルフアカデミーオブアメリカサンディエゴ、応用ビジネス準学士号（プレーヤークレジット）'
             ]
         ],
         [
             'nickname'     => 'Pro PUU',
             'name'         => 'Passakorn Phorod',
-            'title'        => 'TRACKMAN Certified Instructor',
-            'certified'    => 'Certified Instructor - GI 1387',
+            'title'        => 'TRACKMAN 認定インストラクター',
+            'certified'    => '認定インストラクター - GI 1387',
             'languages'    => [
                 'th',
                 'us',
@@ -81,7 +81,7 @@ return [
                 '2009 Champion of NGC Junior Tournament'
             ],
             'education'    => [
-                'Bachelor of Engineer at King Mongkut’s University of Technology Thonburi'
+                'キングモンクット工科大学トンブリ校で工学士を取得'
             ]
         ]
     ]

@@ -98,10 +98,10 @@
                         </label>
                     </div>
                     <div class="col-md-12 text-center">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                        <button type="submit">Send Message</button>
+                        <div class="loading"></div>
+                        <div class="error-message"><?= lang('Contact.responses.error') ?></div>
+                        <div class="sent-message"><?= lang('Contact.responses.success') ?></div>
+                        <button type="submit"><?= lang('Contact.form.button') ?></button>
                     </div>
                 </div>
             </form>

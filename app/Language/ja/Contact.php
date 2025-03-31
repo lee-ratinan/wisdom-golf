@@ -1,14 +1,19 @@
 <?php
 return [
-    'title'    => 'Contact Us',
-    'address'  => 'Address',
-    'call-us'  => 'Call Us',
-    'email-us' => 'Email Us',
-    'form'     => [
-        'title'   => 'Send Us a Message',
-        'name'    => 'Name',
-        'email'   => 'Email',
-        'phone'   => 'Phone',
-        'message' => 'Message',
+    'title'     => 'お問い合わせ',
+    'address'   => '住所',
+    'call-us'   => '電話番号',
+    'email-us'  => 'メールアドレス',
+    'form'      => [
+        'title'   => 'お問い合わせ',
+        'name'    => '名前',
+        'email'   => 'メールアドレス',
+        'phone'   => '電話番号',
+        'message' => 'メッセージ',
+        'button'  => '送信',
+    ],
+    'responses' => [
+        'error'   => 'メッセージの送信中にエラーが発生しました。後でもう一度お試しください。',
+        'success' => 'メッセージが送信されました。できるだけ早くご連絡いたします。',
     ]
 ];

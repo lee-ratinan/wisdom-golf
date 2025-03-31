@@ -2,26 +2,26 @@
 return [
     'title'       => 'Wisdom Golf Academy',
     'navigations' => [
-        'home'        => 'Home',
-        'instructors' => 'Instructors',
-        'reviews'     => 'Reviews',
-        'contact'     => 'Contact',
+        'home'        => 'ホーム',
+        'instructors' => 'インストラクター',
+        'reviews'     => '証言',
+        'contact'     => 'お問い合わせ',
         'news'        => 'News',
         'line'        => 'LINE',
-        'languages'   => 'Languages'
+        'languages'   => '言語'
     ],
     'languages'   => [
-        'th' => 'Thai',
-        'us' => 'English',
-        'jp' => 'Japanese',
+        'th' => 'タイ語',
+        'us' => '英語',
+        'jp' => '日本語',
     ],
     'footer'      => [
         'address_line_1' => 'Soi Sukhumvit 70/3, Bang Na Tai,',
         'address_line_2' => 'Bang Na, Bangkok 10260, Thailand',
-        'phone_label'    => 'Phone',
-        'email_label'    => 'Email',
-        'useful_links'   => 'Useful Links',
-        'copyright'      => 'Copyright &copy; 2025{0} Wisdom Golf Academy. All Rights Reserved.',
+        'phone_label'    => '電話番号',
+        'email_label'    => 'メールアドレス',
+        'useful_links'   => '便利なリンク',
+        'copyright'      => '© 2025{0} Wisdom Golf Academy。著作権所有。',
     ],
     'top'         => 'Top'
 ];

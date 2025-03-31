@@ -2,35 +2,35 @@
 return [
     'hero'         => [
         'title'    => 'Wisdom Golf Academy',
-        'subtitle' => 'Where you become a better golfer, powered by technology.',
+        'subtitle' => 'テクノロジーを活用して、より優れたゴルファーになれる場所。',
     ],
     'cta'          => [
-        'get-started' => 'Get Started',
-        'watch-video' => 'Watch Video',
+        'get-started' => '始める',
+        'watch-video' => 'ビデオを見る',
     ],
     'intro'        => [
-        'title' => 'Introduction',
-        'para1' => 'We are an indoor golf school in Bangkok, located in the Bangna Driving Range. Equipped with the top-notch golf simulator, used by PGA/LPGA Tour players, TRACKMAN, we provide our students with private golf lessons under the supervision of our highly-qualified instructors to ensure the success of their golf development.',
-        'para2' => 'After the indoor class, students can practice their golf skills outdoors, whether putting, chipping, or hitting shots on the real grass, which will make the golf learning and development even more effective.'
+        'title' => '導入',
+        'para1' => '私たちはバンコクのバンナー ドライビング レンジにあるインドア ゴルフ スクールです。PGA/LPGA ツアー プレーヤーが使用する最高級のゴルフ シミュレーター TRACKMAN を備え、優秀なインストラクターの指導のもと、生徒にプライベート ゴルフ レッスンを提供し、ゴルフの上達を成功に導きます。',
+        'para2' => '屋内でのレッスンの後、生徒は屋外でパッティング、チッピング、または本物の芝生での打撃など、ゴルフのスキルを練習することができ、ゴルフの学習と上達がさらに効果的になります。'
     ],
     'why-academy'  => [
-        'title' => 'Why Wisdom Golf Academy?',
+        'title' => 'なぜ Wisdom Golf Academy?',
         'items' => [
-            '<b>World-Class Technology</b><br>We use “Trackman4” and “TrackmanIO”, the most reliable golf launch monitor in the world, used by professional golfers.',
-            '<b>Highly Qualified Instructors</b><br>“TRACKMAN Certified Instructors”, trained by “TRACKMAN University”, with training from leading institutions i.e. Golf Academy of America, Gears Golf, Smart2Move, SportsboxAI, and Golf’s Ground Reaction Forces by Steve Furlonger.',
-            '<b>Passion For Teaching</b><br>Our instructors are attentive, committed and experienced in teaching golf indoors and outdoors, ensuring the best for our students.',
-            '<b>Comprehensive Practice Facilities</b><br> Located at “The Bangna Driving Range”, with full facilities i.e. wide practice lanes, real grass practice area, standard putting greens, and real grass short game area.',
-            '<b>Convenient Location</b><br>Close to BTS Bang Na and BTS Bearing.'
+            '<b>世界クラスのテクノロジー</b><br>プロゴルファーも使用する、世界で最も信頼性の高いゴルフ ローンチ モニター「Trackman4」と「TrackmanIO」を使用しています。',
+            '<b>高度な資格を持つインストラクター</b><br>TRACKMAN 認定インストラクター。Trackman University でトレーニングを受けており、Golf Academy of America、Gears Golf、Smart2Move、SportsboxAI、Steve FurlongerによるGolf’s Ground Reaction Forcesなど、一流機関によるトレーニングも受けています。',
+            '<b>指導への情熱</b><br>当校のインストラクターは、屋内外でのゴルフ指導に熱心で、熱意があり、経験豊富で、生徒に最高の指導を提供します。',
+            '<b>総合的な練習施設</b><br>THE Bangna Driving Range に位置し、広い練習レーン、本物の芝の練習場、標準的なパッティンググリーン、本物のガラスのショートゲームエリアなど、充実した設備を備えています。',
+            '<b>便利なロケーション</b><br>BTSバンナー駅とBTSベアリング駅に近い。'
         ]
     ],
     'why-trackman' => [
-        'title' => 'Why TRACKMAN?',
+        'title' => 'なぜ TRACKMAN?',
         'items' => [
-            '<b>Accuracy and Reliability</b><br>Trusted and used on the PGA / LPGA Tour, along with other professional golf competitions worldwide.',
-            '<b>Comprehensive Data</b><br>Provides extensive data, including club speed, attack angle, spin rate, ball flight, and more.',
-            '<b>Versatility</b><br>Features tools like Virtual Golf, allowing players to practice in simulated environments and can be used both indoors and outdoors.',
-            '<b>Industry Recognition</b><br>Used by professional golfers and coaches globally. The gold standard for golf training and analysis at the highest levels.',
-            '<b>Continuous Development</b><br>Regularly updates its software and hardware to stay cutting-edge and meet user needs.'
+            '<b>正確性と信頼性</b><br>PGA / LPGA ツアーや、世界中の他のプロゴルフ大会で信頼され、使用されています。',
+            '<b>包括的なデータ</b><br>クラブスピード、打撃角度、スピン率、ボールの飛行など、広範なデータを提供します。',
+            '<b>汎用性</b><br>バーチャルゴルフなどのツールを備えており、プレーヤーはシミュレートされた環境で練習でき、屋内でも屋外でも使用できます。',
+            '<b>業界の認知</b><br>世界中のプロゴルファーやコーチが使用しています。最高レベルのゴルフトレーニングと分析のゴールドスタンダードです。',
+            '<b>継続的な開発</b><br>ソフトウェアとハードウェアを定期的に更新し、最先端を維持し、ユーザーのニーズを満たします。'
         ]
     ]
 ];
