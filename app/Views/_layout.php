@@ -31,7 +31,7 @@
     ======================================================== */ ?>
 </head>
 <body class="index-page">
-<header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" class="header <?= ('home' == $handle ? '' : 'header-orange') ?> d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
         <a href="<?= base_url() ?>" class="logo d-flex align-items-center me-auto">
             <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" class="img-fluid">
@@ -46,8 +46,14 @@
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-        <a class="cta-btn" href="<?= getenv('CONTACT_LINE') ?>" target="_blank"><i class="fa-brands fa-line"></i></a>
-        <a class="cta-btn" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank"><i class="fa-solid fa-phone"></i></a>
+        <a class="cta-btn" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
+            <i class="fa-brands fa-line"></i>
+            <span class="d-none"><?= lang('Theme.navigations.line') ?></span>
+        </a>
+        <a class="cta-btn" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
+            <i class="fa-solid fa-phone"></i>
+            <span class="d-none"><?= lang('Theme.footer.phone_label') ?></span>
+        </a>
     </div>
 </header>
 <main class="main">
@@ -55,20 +61,28 @@
     <!-- CONTACT FORM -->
     <section id="contact" class="contact section">
         <div class="container">
-            <form action="forms/contact.php" method="post" class="php-email-form aos-init aos-animate" data-aos="fade-up" data-aos-delay="1000">
+            <form action="<?= base_url('form-submission') ?>" method="post" class="php-email-form aos-init aos-animate" data-aos="fade-up" data-aos-delay="1000">
                 <div class="row gy-4">
-                    <div class="col-12"><h2><i class="fa-regular fa-envelope"></i> <?= lang('Theme.navigations.contact') ?></h2></div>
-                    <div class="col-md-6">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    <div class="col-12"><h2><i class="fa-regular fa-envelope"></i> <?= lang('Contact.form.title') ?></h2></div>
+                    <div class="col-md-12">
+                        <label for="name" class="w-100"><span class="d-none"><?= lang('Contact.form.name') ?></span>
+                            <input type="text" id="name" class="form-control" name="name" placeholder="<?= lang('Contact.form.name') ?>" required="">
+                        </label>
                     </div>
                     <div class="col-md-6 ">
-                        <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                        <label for="email" class="w-100"><span class="d-none"><?= lang('Contact.form.email') ?></span>
+                            <input type="email" id="email" class="form-control" name="email" placeholder="<?= lang('Contact.form.email') ?>" required="">
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="w-100"><span class="d-none"><?= lang('Contact.form.phone') ?></span>
+                            <input type="text" id="phone" class="form-control" name="phone" placeholder="<?= lang('Contact.form.phone') ?>" required="">
+                        </label>
                     </div>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                    </div>
-                    <div class="col-md-12">
-                        <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
+                        <label for="message" class="w-100"><span class="d-none"><?= lang('Contact.form.message') ?></span>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="<?= lang('Contact.form.message') ?>" required=""></textarea>
+                        </label>
                     </div>
                     <div class="col-md-12 text-center">
                         <div class="loading">Loading</div>
@@ -95,11 +109,11 @@
                     <p><strong><?= lang('Theme.footer.email_label') ?>:</strong> <a href="mailto:<?= getenv('CONTACT_EMAIL') ?>" target="_blank"><?= getenv('CONTACT_EMAIL') ?></a></p>
                 </div>
                 <div class="social-links d-flex mt-4">
-                    <a href="<?= getenv('CONTACT_LINE') ?>" target="_blank"><i class="fa-brands fa-line"></i></a>
-                    <a href="<?= getenv('SOCIAL_FACEBOOK') ?>" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="<?= getenv('SOCIAL_INSTAGRAM') ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="<?= getenv('SOCIAL_TIKTOK') ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="<?= getenv('SOCIAL_YOUTUBE') ?>" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="<?= getenv('CONTACT_LINE') ?>" target="_blank"><i class="fa-brands fa-line"></i><span class="d-none">LINE</span></a>
+                    <a href="<?= getenv('SOCIAL_FACEBOOK') ?>" target="_blank"><i class="fa-brands fa-facebook"></i><span class="d-none">Facebook</span></a>
+                    <a href="<?= getenv('SOCIAL_INSTAGRAM') ?>" target="_blank"><i class="fa-brands fa-instagram"></i><span class="d-none">Instagram</span></a>
+                    <a href="<?= getenv('SOCIAL_TIKTOK') ?>" target="_blank"><i class="fa-brands fa-tiktok"></i><span class="d-none">TikTok</span></a>
+                    <a href="<?= getenv('SOCIAL_YOUTUBE') ?>" target="_blank"><i class="fa-brands fa-youtube"></i><span class="d-none">YouTube</span></a>
                 </div>
             </div>
             <div class="col-md-6 footer-links pt-5">
@@ -113,21 +127,17 @@
             </div>
         </div>
     </div>
-
     <div class="container copyright text-center mt-4">
         <?php $year = ('2025' == date('Y') ? '' : ' - ' . date('Y')); ?>
         <p><?= lang('Theme.footer.copyright', [$year]) ?></p>
     </div>
-
 </footer>
-
 <!-- Scroll Top -->
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i><span class="d-none"><?= lang('Theme.top') ?></span></a>
 <!-- Preloader -->
 <div id="preloader"></div>
 <!-- Vendor JS Files -->
 <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/php-email-form/validate.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/aos/aos.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/purecounter/purecounter_vanilla.js') ?>"></script>
