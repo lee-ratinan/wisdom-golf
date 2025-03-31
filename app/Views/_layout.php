@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $locale ?>">
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -43,6 +43,14 @@
                 <li><a href="<?= base_url($locale . '/reviews') ?>" class=""><?= lang('Theme.navigations.reviews') ?></a></li>
                 <li><a href="<?= base_url($locale . '/contact') ?>" class=""><?= lang('Theme.navigations.contact') ?></a></li>
                 <li><a href="<?= getenv('BLOG_URL') ?>" class=""><?= lang('Theme.navigations.news') ?></a></li>
+                <li class="dropdown"><a href="#"><span><?= lang('Theme.navigations.languages') ?></span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <?php if ('home' == $handle) { $handle = ''; } ?>
+                        <li><a href="<?= base_url('en/' . $handle) ?>"><span><img src="<?= base_url('img/flag-us.svg') ?>" alt="English" class="language-flag me-1"> English</span></a></li>
+                        <li><a href="<?= base_url('th/' . $handle) ?>"><span><img src="<?= base_url('img/flag-th.svg') ?>" alt="ภาษาไทย" class="language-flag me-1"> ภาษาไทย</span></a></li>
+                        <li><a href="<?= base_url('ja/' . $handle) ?>"><span><img src="<?= base_url('img/flag-jp.svg') ?>" alt="日本語" class="language-flag me-1">日本語</span></a></li>
+                    </ul>
+                </li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

@@ -33,7 +33,7 @@ $this->section('content');
                             <p><?= $instructor['certified'] ?></p>
                             <p><?= lang('Instructors.headers.languages') ?>:
                                 <?php foreach ($instructor['languages'] as $lang) : ?>
-                                    <img src="<?= base_url('img/flag-' . $lang . '.svg') ?>" alt="<?= lang('Instructors.languages.' . $lang) ?>" class="language-flag">
+                                    <img src="<?= base_url('img/flag-' . $lang . '.svg') ?>" alt="<?= lang('Theme.languages.' . $lang) ?>" class="language-flag">
                                 <?php endforeach; ?>
                             </p>
                             <?php if (!empty($instructor['certificates'])) : ?>
