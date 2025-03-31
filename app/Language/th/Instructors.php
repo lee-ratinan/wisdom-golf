@@ -1,18 +1,18 @@
 <?php
 return [
-    'title'       => 'Our Pros',
+    'title'       => 'โปรผู้สอน',
     'subtitle'    => 'Meet our certified golf instructors',
     'headers'     => [
-        'languages'    => 'Languages',
-        'certificates' => 'Golf Certificates',
-        'experiences'  => 'Experiences',
-        'tournaments'  => 'Junior Golf Tournament Experiences',
-        'education'    => 'Education',
+        'languages'    => 'ภาษา',
+        'certificates' => 'ประกาศนียบัตร',
+        'experiences'  => 'ประสบการณ์',
+        'tournaments'  => 'ประสบการณ์การแข่งขันกอล์ฟเยาวชน',
+        'education'    => 'การศึกษา',
     ],
     'instructors' => [
         [
-            'nickname'     => 'Pro Toon',
-            'name'         => 'Nuttapong Rianrungruang',
+            'nickname'     => 'โปรตูน',
+            'name'         => 'ณัฐพงศ์ เหรียญรุ่งเรือง',
             'title'        => 'Head Professional',
             'certified'    => 'Certified Instructor - GI 0593',
             'languages'    => [
@@ -42,18 +42,18 @@ return [
             ],
             'tournaments'  => [],
             'education'    => [
-                'Chulalongkorn University, Sport Science, Bachelor’s Degree',
+                'จุฬาลงกรณ์มหาวิทยาลัย ปริญญาตรีสาขาวิทยาศาสตร์การกีฬา',
                 'Golf Academy of America San Diego, Associate of Applied Business Degree (Players Credit)'
             ]
         ],
         [
-            'nickname'     => 'Pro PUU',
-            'name'         => 'Passakorn Phorod',
+            'nickname'     => 'โปรปู',
+            'name'         => 'ภาสกร โพธิ์รอด',
             'title'        => 'TRACKMAN Certified Instructor',
             'certified'    => 'Certified Instructor - GI 1387',
             'languages'    => [
-                'us',
                 'th',
+                'us',
                 'jp'
             ],
             'social-media' => [
@@ -81,7 +81,7 @@ return [
                 '2009 Champion of NGC Junior Tournament'
             ],
             'education'    => [
-                'Bachelor of Engineer at King Mongkut’s University of Technology Thonburi'
+                'วิศวกรรมศาสตรบัณฑิต มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี'
             ]
         ]
     ]

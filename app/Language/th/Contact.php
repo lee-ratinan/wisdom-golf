@@ -1,14 +1,14 @@
 <?php
 return [
-    'title'    => 'Contact Us',
-    'address'  => 'Address',
-    'call-us'  => 'Call Us',
-    'email-us' => 'Email Us',
+    'title'    => 'ติดต่อเรา',
+    'address'  => 'ที่อยู่',
+    'call-us'  => 'หมายเลขโทรศัพท์',
+    'email-us' => 'อีเมล',
     'form'     => [
-        'title'   => 'Send Us a Message',
-        'name'    => 'Name',
-        'email'   => 'Email',
-        'phone'   => 'Phone',
-        'message' => 'Message',
+        'title'   => 'สอบถามข้อมูล',
+        'name'    => 'ชื่อ',
+        'email'   => 'อีเมล',
+        'phone'   => 'หมายเลขโทรศัพท์',
+        'message' => 'ข้อความ',
     ]
 ];

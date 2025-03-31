@@ -15,7 +15,7 @@ $this->section('content');
                 <?php $instructors = lang('Instructors.instructors') ?>
                 <?php foreach ($instructors as $i => $instructor) : ?>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="<?= ($i+1) * 100 ?>">
-                    <img src="<?= base_url('img/' . str_replace(' ', '-', strtolower($instructor['nickname'])) . '.jpg') ?>" class="img-fluid" alt="<?= $instructor['nickname'] ?>">
+                    <img src="<?= base_url('img/instructor-' . $i . '.jpg') ?>" class="img-fluid" alt="<?= $instructor['nickname'] ?>">
                     <div class="card mx-3 mx-md-5 mx-lg-3 mx-xl-5" style="top:-75px;z-index:1;">
                         <div class="card-body">
                             <p class="text-end">

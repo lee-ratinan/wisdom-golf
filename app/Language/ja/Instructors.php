@@ -52,8 +52,8 @@ return [
             'title'        => 'TRACKMAN Certified Instructor',
             'certified'    => 'Certified Instructor - GI 1387',
             'languages'    => [
-                'us',
                 'th',
+                'us',
                 'jp'
             ],
             'social-media' => [
