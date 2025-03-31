@@ -14,17 +14,13 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+CI_ENVIRONMENT=production
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
-# If you have trouble with `.`, you could also use `_`.
-# app_baseURL = ''
-# app.forceGlobalSecureRequests = false
-# app.CSPEnabled = false
+app.baseURL=http://127.0.0.1:8888/wisdom-golf/public/
 
 #--------------------------------------------------------------------
 # DATABASE
@@ -66,4 +62,24 @@
 # LOGGER
 #--------------------------------------------------------------------
 
-# logger.threshold = 4
+logger.threshold=4
+
+## CONTACT INFO
+CONTACT_LINE=https://lin.ee/rn94ZqL
+CONTACT_TEL=+66959157834
+CONTACT_TEL_LABEL=095-915-7834
+CONTACT_EMAIL=wisdomgolfacademy@gmail.com
+SOCIAL_FACEBOOK=https://www.facebook.com/profile.php?id=61569536114185
+SOCIAL_INSTAGRAM=https://www.instagram.com/wisdom.golfacademy/
+SOCIAL_TIKTOK=https://www.tiktok.com/@wisdomgolfacademy
+SOCIAL_YOUTUBE=https://www.youtube.com/@WisdomGolfAcademy
+
+
+## LINKS
+BLOG_URL=https://blog.wisdomgolfacademy.com
+
+# ANALYTICS
+ANALYTICS_ID=G-2RP837Q2B7
+
+# CONTACT FORM EMAIL ADDRESS
+CONTACT_FORM_EMAIL=wisdomgolfacademy@gmail.com
