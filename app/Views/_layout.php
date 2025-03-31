@@ -6,6 +6,12 @@
     <title><?= $page ?> - <?= lang('Theme.title') ?></title>
     <meta name="description" content="<?= lang('Seo.' . $handle . '.description') ?>">
     <meta name="keywords" content="<?= lang('Seo.' . $handle . '.keywords') ?>">
+    <meta name="author" content="<?= lang('Theme.author') ?>">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="<?= $page ?> - <?= lang('Theme.title') ?>">
+    <meta property="og:description" content="<?= lang('Seo.' . $handle . '.description') ?>">
+    <meta property="og:image" content="<?= base_url('img/home-intro.jpg') ?>">
+    <meta property="og:url" content="<?= base_url($locale . '/' . ('home' == $handle ? '' : $handle)) ?>">
     <!-- Favicons -->
     <link href="<?= base_url('assets/img/favicon.png') ?>" rel="icon">
     <link href="<?= base_url('assets/img/apple-touch-icon.png') ?>" rel="apple-touch-icon">

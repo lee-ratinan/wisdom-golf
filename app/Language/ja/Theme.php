@@ -1,6 +1,7 @@
 <?php
 return [
     'title'       => 'Wisdom Golf Academy',
+    'author'      => 'Wisdom Golf Academy',
     'navigations' => [
         'home'        => 'ホーム',
         'instructors' => 'インストラクター',
