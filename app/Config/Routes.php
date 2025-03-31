@@ -13,3 +13,4 @@ $routes->get('{locale}/instructors', 'Home::instructors');
 $routes->get('{locale}/contact', 'Home::contact');
 $routes->get('{locale}', 'Home::index');
 $routes->get('/', 'Home::index');
+$routes->post('form-submission', 'Home::formSubmission');
