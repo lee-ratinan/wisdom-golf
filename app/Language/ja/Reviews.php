@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'   => 'Reviews',
+    'title'   => '証言',
     'reviews' => [
         [
             'name'    => 'Pongsakon Charoenwathana',
