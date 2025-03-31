@@ -32,6 +32,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Link Languages -->
+    <link rel="alternate" hreflang="en" href="<?= base_url('en/' . ('home' == $handle ? '' : $handle)) ?>">
+    <link rel="alternate" hreflang="th" href="<?= base_url('th/' . ('home' == $handle ? '' : $handle)) ?>">
+    <link rel="alternate" hreflang="ja" href="<?= base_url('ja/' . ('home' == $handle ? '' : $handle)) ?>">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=<?= getenv('ANALYTICS_ID') ?>"></script>
     <script>
