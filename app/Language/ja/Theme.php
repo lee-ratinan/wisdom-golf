@@ -6,7 +6,7 @@ return [
         'instructors' => 'インストラクター',
         'reviews'     => '証言',
         'contact'     => 'お問い合わせ',
-        'news'        => 'News',
+        'news'        => 'ニュース',
         'line'        => 'LINE',
         'languages'   => '言語'
     ],

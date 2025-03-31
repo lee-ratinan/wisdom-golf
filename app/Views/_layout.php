@@ -22,11 +22,17 @@
     <link href="<?= base_url('assets/vendor/fontawesome-free-6.7.2/css/all.min.css') ?>" rel="stylesheet">
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=<?= getenv('ANALYTICS_ID') ?>"></script>
     <script>
         window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '<?= getenv('ANALYTICS_ID') ?>');
     </script>
+    <?php $fonts = ('th' == $locale ? 'Noto Sans Thai' : ('ja' == $locale ? 'Noto Sans JP' : '')); ?>
+    <?php if (!empty($fonts)): ?><style>body,h1,h2,h3,h4,p,span,.navmenu a, .navmenu a:focus {font-family: '<?= $fonts ?>', sans-serif !important;}</style><?php endif; ?>
     <?php /* -- =======================================================
     * Template Name: Dewi
     * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
@@ -136,6 +142,7 @@
                     <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/instructors') ?>"><?= lang('Theme.navigations.instructors') ?></a></li>
                     <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/reviews') ?>"><?= lang('Theme.navigations.reviews') ?></a></li>
                     <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= getenv('BLOG_URL') ?>"><?= lang('Theme.navigations.news') ?></a></li>
                 </ul>
             </div>
         </div>
