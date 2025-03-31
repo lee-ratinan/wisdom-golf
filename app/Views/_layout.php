@@ -22,6 +22,11 @@
     <link href="<?= base_url('assets/vendor/fontawesome-free-6.7.2/css/all.min.css') ?>" rel="stylesheet">
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= getenv('ANALYTICS_ID') ?>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '<?= getenv('ANALYTICS_ID') ?>');
+    </script>
     <?php /* -- =======================================================
     * Template Name: Dewi
     * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
