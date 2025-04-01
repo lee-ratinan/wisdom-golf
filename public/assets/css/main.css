@@ -232,8 +232,8 @@ h6 {
   z-index: 997;
 }
 
-.header-orange {
-  background-color: var(--accent-color);
+.header-orange, .orange-background {
+  background-color: var(--accent-color) !important;
 }
 
 .header .logo {
