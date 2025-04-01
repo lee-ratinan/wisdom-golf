@@ -112,7 +112,7 @@
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  /* new PureCounter(); */
 
   /**
    * Init swiper sliders
