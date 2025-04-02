@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="<?= $locale ?>">
 <head>
+    <?php
+    $locale_nav = ('en' == $locale ? '' : $locale . '/');
+    $handle_nav = ('home' == $handle ? '' : $handle);
+    ?>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $page ?> - <?= lang('Theme.title') ?></title>
@@ -11,7 +15,7 @@
     <meta property="og:title" content="<?= $page ?> - <?= lang('Theme.title') ?>">
     <meta property="og:description" content="<?= lang('Seo.' . $handle . '.description') ?>">
     <meta property="og:image" content="<?= base_url('img/home-intro.jpg') ?>">
-    <meta property="og:url" content="<?= base_url($locale . '/' . ('home' == $handle ? '' : $handle)) ?>">
+    <meta property="og:url" content="<?= base_url($locale_nav . $handle_nav) ?>">
     <!-- Favicons -->
     <link href="<?= base_url('img/favicon-180.png') ?>" rel="icon">
     <link href="<?= base_url('img/favicon-192.png') ?>" rel="apple-touch-icon">
@@ -20,9 +24,8 @@
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <?php if (in_array($locale, ['th', 'ja'])): ?>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+<?= strtoupper($locale) ?>:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     <?php endif; ?>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     <!-- Vendor CSS Files -->
     <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
@@ -33,9 +36,9 @@
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.min.css') ?>" rel="stylesheet">
     <!-- Link Languages -->
-    <link rel="alternate" hreflang="en" href="<?= base_url('en/' . ('home' == $handle ? '' : $handle)) ?>">
-    <link rel="alternate" hreflang="th" href="<?= base_url('th/' . ('home' == $handle ? '' : $handle)) ?>">
-    <link rel="alternate" hreflang="ja" href="<?= base_url('ja/' . ('home' == $handle ? '' : $handle)) ?>">
+    <link rel="alternate" hreflang="en" href="<?= base_url('en/' . $handle_nav) ?>">
+    <link rel="alternate" hreflang="th" href="<?= base_url('th/' . $handle_nav) ?>">
+    <link rel="alternate" hreflang="ja" href="<?= base_url('ja/' . $handle_nav) ?>">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=<?= getenv('ANALYTICS_ID') ?>"></script>
     <script>
@@ -59,17 +62,17 @@
         </a>
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="<?= base_url($locale) ?>" class=""><?= lang('Theme.navigations.home') ?></a></li>
-                <li><a href="<?= base_url($locale . '/instructors') ?>" class=""><?= lang('Theme.navigations.instructors') ?></a></li>
-                <li><a href="<?= base_url($locale . '/reviews') ?>" class=""><?= lang('Theme.navigations.reviews') ?></a></li>
-                <li><a href="<?= base_url($locale . '/contact') ?>" class=""><?= lang('Theme.navigations.contact') ?></a></li>
-                <li><a href="<?= getenv('BLOG_URL') ?>" class=""><?= lang('Theme.navigations.news') ?></a></li>
+                <li><a href="<?= base_url($locale_nav) ?>" class=""><?= lang('Theme.navigations.home') ?></a></li>
+                <li><a href="<?= base_url($locale_nav . 'instructors') ?>" class=""><?= lang('Theme.navigations.instructors') ?></a></li>
+                <li><a href="<?= base_url($locale_nav . 'reviews') ?>" class=""><?= lang('Theme.navigations.reviews') ?></a></li>
+                <li><a href="<?= base_url($locale_nav . 'q-and-a') ?>" class=""><?= lang('Theme.navigations.q-and-a') ?></a></li>
+                <li><a href="<?= base_url($locale_nav . 'packages') ?>" class=""><?= lang('Theme.navigations.packages') ?></a></li>
+                <li><a href="<?= base_url($locale_nav . 'contact') ?>" class=""><?= lang('Theme.navigations.contact') ?></a></li>
                 <li class="dropdown"><a href="#"><span><?= lang('Theme.navigations.languages') ?></span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <?php if ('home' == $handle) { $handle = ''; } ?>
-                        <li><a href="<?= base_url('en/' . $handle) ?>"><span><img src="<?= base_url('img/flag-us.svg') ?>" alt="English" class="language-flag me-1"> English</span></a></li>
-                        <li><a href="<?= base_url('th/' . $handle) ?>"><span><img src="<?= base_url('img/flag-th.svg') ?>" alt="ภาษาไทย" class="language-flag me-1"> ภาษาไทย</span></a></li>
-                        <li><a href="<?= base_url('ja/' . $handle) ?>"><span><img src="<?= base_url('img/flag-jp.svg') ?>" alt="日本語" class="language-flag me-1">日本語</span></a></li>
+                        <li><a href="<?= base_url('en/' . $handle_nav) ?>"><span><img src="<?= base_url('img/flag-us.svg') ?>" alt="English" class="language-flag me-1"> English</span></a></li>
+                        <li><a href="<?= base_url('th/' . $handle_nav) ?>"><span><img src="<?= base_url('img/flag-th.svg') ?>" alt="ภาษาไทย" class="language-flag me-1"> ภาษาไทย</span></a></li>
+                        <li><a href="<?= base_url('ja/' . $handle_nav) ?>"><span><img src="<?= base_url('img/flag-jp.svg') ?>" alt="日本語" class="language-flag me-1">日本語</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -148,11 +151,12 @@
             <div class="col-md-6 footer-links pt-5">
                 <h3><?= lang('Theme.footer.useful_links') ?></h3>
                 <ul>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale) ?>"><?= lang('Theme.navigations.home') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/instructors') ?>"><?= lang('Theme.navigations.instructors') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/reviews') ?>"><?= lang('Theme.navigations.reviews') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale . '/contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= getenv('BLOG_URL') ?>"><?= lang('Theme.navigations.news') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav) ?>"><?= lang('Theme.navigations.home') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/instructors') ?>"><?= lang('Theme.navigations.instructors') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/reviews') ?>"><?= lang('Theme.navigations.reviews') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/q-and-a') ?>"><?= lang('Theme.navigations.q-and-a') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
+                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
                 </ul>
             </div>
         </div>
