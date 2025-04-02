@@ -7,7 +7,8 @@ return [
         'instructors' => 'インストラクター',
         'reviews'     => '証言',
         'contact'     => 'お問い合わせ',
-        'news'        => 'ニュース',
+        'q-and-a'     => 'Q&A',
+        'packages'    => 'パッケージ',
         'line'        => 'LINE',
         'languages'   => '言語'
     ],

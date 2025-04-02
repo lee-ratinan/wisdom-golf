@@ -69,6 +69,36 @@ class Home extends BaseController
     }
 
     /**
+     * Q and A page
+     * @return string
+     */
+    public function q_and_a(): string
+    {
+        $locale = $this->request->getLocale();
+        $data   = [
+            'page'   => lang('Theme.navigations.q-and-a'),
+            'handle' => 'q-and-a',
+            'locale' => $locale
+        ];
+        return view('q-and-a', $data);
+    }
+
+    /**
+     * Packages page
+     * @return string
+     */
+    public function packages(): string
+    {
+        $locale = $this->request->getLocale();
+        $data   = [
+            'page'   => lang('Theme.navigations.packages'),
+            'handle' => 'packages',
+            'locale' => $locale
+        ];
+        return view('packages', $data);
+    }
+
+    /**
      * Form submission handler
      * @return string
      */

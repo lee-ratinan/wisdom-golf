@@ -7,7 +7,8 @@ return [
         'instructors' => 'โปรผู้สอน',
         'reviews'     => 'รีวิว',
         'contact'     => 'ติดต่อเรา',
-        'news'        => 'ข่าวสาร',
+        'q-and-a'     => 'Q&A',
+        'packages'    => 'ราคา',
         'line'        => 'ไลน์',
         'languages'   => 'เปลี่ยนภาษา'
     ],

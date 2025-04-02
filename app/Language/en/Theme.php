@@ -7,7 +7,8 @@ return [
         'instructors' => 'Instructors',
         'reviews'     => 'Reviews',
         'contact'     => 'Contact',
-        'news'        => 'News',
+        'q-and-a'     => 'Q&A',
+        'packages'    => 'Packages',
         'line'        => 'LINE',
         'languages'   => 'Languages'
     ],
