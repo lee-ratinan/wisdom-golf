@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://www.wisdomgolfacademy.com/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/"/>
-        <xhtml:link rel="alternate" hreflang="th" href="https://www.wisdomgolfacademy.com/th/"/>
-        <lastmod>2024-04-01</lastmod>
+        <loc>https://wisdomgolfacademy.com/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/"/>
+        <lastmod>2024-04-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.wisdomgolfacademy.com/instructors</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/instructors"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/instructors"/>
-        <xhtml:link rel="alternate" hreflang="th" href="https://www.wisdomgolfacademy.com/th/instructors"/>
-        <lastmod>2024-04-01</lastmod>
+        <loc>https://wisdomgolfacademy.com/instructors</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/instructors"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/instructors"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/instructors"/>
+        <lastmod>2024-04-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wisdomgolfacademy.com/reviews</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/reviews"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/reviews"/>
-        <xhtml:link rel="alternate" hreflang="th" href="https://www.wisdomgolfacademy.com/th/reviews"/>
-        <lastmod>2024-04-01</lastmod>
+        <loc>https://wisdomgolfacademy.com/reviews</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/reviews"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/reviews"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/reviews"/>
+        <lastmod>2024-04-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wisdomgolfacademy.com/q-and-a</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/q-and-a"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/q-and-a"/>
-        <xhtml:link rel="alternate" hreflang="th" href="https://www.wisdomgolfacademy.com/th/q-and-a"/>
-        <lastmod>2024-04-01</lastmod>
+        <loc>https://wisdomgolfacademy.com/q-and-a</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/q-and-a"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/q-and-a"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/q-and-a"/>
+        <lastmod>2024-04-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wisdomgolfacademy.com/packages</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/packages"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/packages"/>
-        <xhtml:link rel="alternate" hreflang="th" href="https://www.wisdomgolfacademy.com/th/packages"/>
-        <lastmod>2024-04-01</lastmod>
+        <loc>https://wisdomgolfacademy.com/packages</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/packages"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/packages"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/packages"/>
+        <lastmod>2024-04-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wisdomgolfacademy.com/contact</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/contact"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/contact"/>
-        <xhtml:link rel="alternate" hreflang="th" href="https://www.wisdomgolfacademy.com/th/contact"/>
-        <lastmod>2024-04-01</lastmod>
+        <loc>https://wisdomgolfacademy.com/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/contact"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/contact"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/contact"/>
+        <lastmod>2024-04-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
