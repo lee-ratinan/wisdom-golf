@@ -28,6 +28,24 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.wisdomgolfacademy.com/q-and-a</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/q-and-a"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/q-and-a"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://www.wisdomgolfacademy.com/th/q-and-a"/>
+        <lastmod>2024-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.wisdomgolfacademy.com/packages</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/packages"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/packages"/>
+        <xhtml:link rel="alternate" hreflang="th" href="https://www.wisdomgolfacademy.com/th/packages"/>
+        <lastmod>2024-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.wisdomgolfacademy.com/contact</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.wisdomgolfacademy.com/en/contact"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://www.wisdomgolfacademy.com/ja/contact"/>
