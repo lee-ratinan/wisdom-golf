@@ -74,7 +74,7 @@
 <!-- Lower Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-header header-orange text-white">
     <div class="container-fluid">
-        <a class="navbar-brand me-1 d-lg-none" href="#">
+        <a class="navbar-brand me-0 d-lg-none" href="#">
             <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="40">
         </a>
         <a class="text-white d-lg-none" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
@@ -84,8 +84,8 @@
         <a class="text-white d-lg-none" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
             <i class="fa-brands fa-line fa-2x"></i>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <i class="fa-solid fa-bars" style="font-size: 1.5em;"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
