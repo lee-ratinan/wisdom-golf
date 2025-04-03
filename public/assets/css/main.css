@@ -18,7 +18,7 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #273d4e; /* Color for headings, subheadings and title throughout the website */
@@ -286,19 +286,38 @@ h6 {
 }
 .nav-item {
   padding: 0 1em;
+  position: relative;
+  margin-bottom: 0.25em;
 }
-
 .nav-item a, .contact-link {
   color: #fff;
   font-size: 1.2em;
 }
-
 .nav-link {
   padding: 0 !important;
 }
-
-.contact-link:hover {
-color: #fff !important; text-decoration: underline;
+.nav-item a:hover {
+  color: #fff !important;
+}
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: orange;
+  transition: width 0.3s ease-in-out;
+}
+.nav-item:hover::after {
+  width: 100%;
+}
+.contact-tel:hover {
+  color: #ffcc00 !important;
+}
+.contact-line:hover {
+  color: #fff !important;
+  background-color: #02A74A!important;
 }
 
 @media (max-width: 1200px) {
@@ -314,6 +333,21 @@ color: #fff !important; text-decoration: underline;
 
   .header .navmenu {
     order: 3;
+  }
+
+  #navbarNav {
+    margin-top: 1em;
+  }
+  .nav-item {
+    margin-bottom: 0.5em;
+  }
+
+  .change-language-buttons {
+    padding: 1em;
+  }
+
+  .change-language-buttons .language-flag {
+    margin-right: 0.5em;
   }
 }
 

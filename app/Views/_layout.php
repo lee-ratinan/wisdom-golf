@@ -61,20 +61,29 @@
         <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="50">
     </div>
     <div>
-        <a class="contact-link me-3" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
+        <a class="contact-link contact-tel me-3" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
             <i class="fa-solid fa-phone"></i>
             <?= getenv('CONTACT_TEL_LABEL') ?>
         </a>
-        <a class="contact-link btn btn-line rounded-pill" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
+        <a class="contact-link contact-line btn btn-line rounded-pill" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
             <i class="fa-brands fa-line"></i>
-            ADD FRIEND <span class="d-none"><?= lang('Theme.navigations.line') ?></span>
+            <small>ADD FRIEND</small>
         </a>
     </div>
 </div>
 <!-- Lower Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-header header-orange text-white">
     <div class="container-fluid">
-        <a class="navbar-brand d-lg-none" href="#"><img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="50"></a>
+        <a class="navbar-brand me-1 d-lg-none" href="#">
+            <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="50">
+        </a>
+        <a class="text-white d-lg-none" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
+            <i class="fa-solid fa-phone"></i>
+            <?= getenv('CONTACT_TEL_LABEL') ?>
+        </a>
+        <a class="text-white d-lg-none" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
+            <i class="fa-brands fa-line fa-2x"></i>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -87,7 +96,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
             </ul>
-            <div class="d-flex gap-2">
+            <div class="d-flex gap-2 change-language-buttons">
                 <a href="<?= base_url('en/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-us-rec.svg') ?>" alt="English" title="English" class="language-flag flag-nav"></a>
                 <a href="<?= base_url('th/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-th-rec.svg') ?>" alt="ภาษาไทย" title="ภาษาไทย" class="language-flag flag-nav"></a>
                 <a href="<?= base_url('ja/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-jp-rec.svg') ?>" alt="日本語" title="日本語" class="language-flag flag-nav"></a>
