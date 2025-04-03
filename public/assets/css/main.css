@@ -271,6 +271,36 @@ h6 {
   border-color: var(--accent-color);
 }
 
+.upper-header {
+  transition: top 0.3s;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.btn-line {
+  background-color: #03C75A!important;
+}
+.nav-item {
+  padding: 0 1em;
+}
+
+.nav-item a, .contact-link {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.nav-link {
+  padding: 0 !important;
+}
+
+.contact-link:hover {
+color: #fff !important; text-decoration: underline;
+}
+
 @media (max-width: 1200px) {
   .header .logo {
     order: 1;
@@ -1868,4 +1898,7 @@ section,
   height: 1em;
   border: 1px solid #aaa;
   border-radius: 30%;
+}
+.language-flag.flag-nav {
+  height: 1.2em !important;
 }

@@ -53,22 +53,6 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== */ ?>
-
-
-    <style>
-        .upper-header {
-            transition: top 0.3s;
-        }
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            z-index: 1020;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-
-    </style>
 </head>
 <body class="index-page">
 <!-- Upper Header -->
@@ -77,13 +61,13 @@
         <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="50">
     </div>
     <div>
-        <a class="cta-btn" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
+        <a class="contact-link me-3" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
             <i class="fa-solid fa-phone"></i>
-            <span class="d-none"><?= lang('Theme.footer.phone_label') ?></span>
+            <?= getenv('CONTACT_TEL_LABEL') ?>
         </a>
-        <a href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
+        <a class="contact-link btn btn-line rounded-pill" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
             <i class="fa-brands fa-line"></i>
-            <span class="d-none"><?= lang('Theme.navigations.line') ?></span>
+            ADD FRIEND <span class="d-none"><?= lang('Theme.navigations.line') ?></span>
         </a>
     </div>
 </div>
@@ -104,9 +88,9 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
             </ul>
             <div class="d-flex gap-2">
-                <a href="<?= base_url($handle_nav) ?>"><img src="<?= base_url('img/flag-us.svg') ?>" alt="English" class="language-flag"></a>
-                <a href="<?= base_url('th/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-th.svg') ?>" alt="ภาษาไทย" class="language-flag"></a>
-                <a href="<?= base_url('ja/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-jp.svg') ?>" alt="日本語" class="language-flag"></a>
+                <a href="<?= base_url($handle_nav) ?>"><img src="<?= base_url('img/flag-us.svg') ?>" alt="English" class="language-flag flag-nav"></a>
+                <a href="<?= base_url('th/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-th.svg') ?>" alt="ภาษาไทย" class="language-flag flag-nav"></a>
+                <a href="<?= base_url('ja/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-jp.svg') ?>" alt="日本語" class="language-flag flag-nav"></a>
             </div>
         </div>
     </div>
@@ -193,23 +177,6 @@
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i><span class="d-none"><?= lang('Theme.top') ?></span></a>
 <!-- Preloader -->
 <div id="preloader"></div>
-
-
-<script>
-    let lastScrollTop = 0;
-    const upperHeader = document.querySelector(".upper-header");
-    window.addEventListener("scroll", function() {
-        let scrollTop = window.scrollY;
-        if (scrollTop > lastScrollTop) {
-            upperHeader.style.top = "-50px";
-        } else {
-            upperHeader.style.top = "0";
-        }
-        lastScrollTop = scrollTop;
-    });
-</script>
-
-
 <!-- Vendor JS Files -->
 <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/php-email-form/validate.js') ?>"></script>

@@ -206,4 +206,16 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  let lastScrollTop = 0;
+  const upperHeader = document.querySelector(".upper-header");
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.scrollY;
+    if (scrollTop > lastScrollTop) {
+      upperHeader.style.top = "-50px";
+    } else {
+      upperHeader.style.top = "0";
+    }
+    lastScrollTop = scrollTop;
+  });
+
 })();
