@@ -4,7 +4,7 @@ $this->section('content');
 ?>
     <h1 class="d-none"><?= lang('Theme.navigations.instructors') ?></h1>
     <!-- Team Section -->
-    <section id="team" class="team section light-background pt-0">
+    <section id="team" class="team section light-background pt-5 mt-0">
         <!-- Section Title -->
         <div class="container section-title mt-5" data-aos="fade-up">
             <h2><span class="d-none"><?= lang('Instructors.title') ?></span> <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></h2>
