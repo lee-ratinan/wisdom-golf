@@ -16,15 +16,7 @@ $this->section('content');
                 <div class="col-md-10 col-lg-8">
                     <div class="card">
                         <div class="card-body">
-                            <?php
-                            $answers = [
-                                'https://shorturl.at/QiViD',
-                                'https://shorturl.at/2tpr6',
-                                'https://shorturl.at/hde3B',
-                                'https://shorturl.at/VcdI1',
-                                'https://shorturl.at/5agrN',
-                            ];
-                            ?>
+                            <?php $answers = lang('QNA.links'); ?>
                             <ul class="list-group list-group-flush">
                                 <?php foreach (lang('QNA.questions') as $i => $question) : ?>
                                     <li class="list-group-item">
