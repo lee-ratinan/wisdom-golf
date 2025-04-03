@@ -3,7 +3,7 @@ $this->extend('_layout.php');
 $this->section('content');
 ?>
     <h1 class="d-none"><?= lang('Theme.navigations.q-and-a') ?></h1>
-    <section id="qna" class="contact section mt-5 pt-5">
+    <section id="qna" class="contact section pt-0">
         <!-- Section Title -->
         <div class="container section-title mt-5 pb-3" data-aos="fade-up">
             <h2><span class="d-none"><?= lang('Theme.navigations.q-and-a') ?></span> <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></h2>
