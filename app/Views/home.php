@@ -11,7 +11,7 @@ $this->section('content');
                     <h2 class="text-white"><?= lang('Home.intro.title') ?></h2>
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <img src="<?= base_url('img/home-intro.png') ?>" class="img-fluid rounded-4 mb-4" alt="<?= lang('Home.hero.title') ?>">
+                    <img src="<?= base_url('img/home-intro.jpg') ?>" class="img-fluid rounded-4 mb-4" alt="<?= lang('Home.hero.title') ?>">
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="content ps-0 ps-lg-5">
