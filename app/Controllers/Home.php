@@ -109,10 +109,11 @@ class Home extends BaseController
         $phone   = $this->request->getPost('phone');
         $message = $this->request->getPost('message');
         $to      = getenv('CONTACT_FORM_EMAIL');
+        $fr      = getenv('CONTACT_FORM_FROM');
         // Send the email
         $email = Services::email();
         $email->setTo($to);
-        $email->setFrom($from, $name);
+        $email->setFrom($fr);
         $email->setSubject('Contact Form Submission');
         $email->setMessage("Contact Form Submission\n\nName: $name\nEmail: $from\nPhone: $phone\nMessage: $message");
         if ($email->send()) {
