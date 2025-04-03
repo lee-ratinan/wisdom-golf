@@ -6,7 +6,7 @@ $this->section('content');
     <!-- Team Section -->
     <section id="team" class="team section light-background pt-5 mt-0">
         <!-- Section Title -->
-        <div class="container section-title mt-5" data-aos="fade-up">
+        <div class="container section-title" data-aos="fade-up">
             <h2><span class="d-none"><?= lang('Instructors.title') ?></span> <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></h2>
             <p><?= lang('Instructors.title') ?></p>
         </div><!-- End Section Title -->
