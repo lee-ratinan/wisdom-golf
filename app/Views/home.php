@@ -3,20 +3,9 @@ $this->extend('_layout.php');
 $this->section('content');
 ?>
     <h1 class="d-none"><?= lang('Theme.navigations.home') ?></h1>
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-        <div class="container d-flex flex-column align-items-center">
-            <h2 data-aos="fade-up" data-aos-delay="100"><?= lang('Home.hero.title') ?></h2>
-            <p data-aos="fade-up" data-aos-delay="200"><?= lang('Home.hero.subtitle') ?></p>
-            <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-                <a href="#contact" class="btn-get-started"><?= lang('Home.cta.get-started') ?></a>
-                <a href="https://www.youtube.com/watch?v=20hPt7jbbhg" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span><?= lang('Home.cta.watch-video') ?></span></a>
-            </div>
-        </div>
-    </section><!-- /Hero Section -->
     <!-- About Section -->
     <section id="about" class="about section orange-background text-white">
-        <div class="container">
+        <div class="container pt-5">
             <div class="row gy-4">
                 <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="text-white"><?= lang('Home.intro.title') ?></h2>

@@ -16,7 +16,7 @@ return [
     'why-academy'  => [
         'title' => 'なぜ Wisdom Golf Academy?',
         'items' => [
-            '<b>世界クラスのテクノロジー</b><br>プロゴルファーも使用する、世界で最も信頼性の高いゴルフ ローンチ モニター「Trackman4」と「TrackmanIO」を使用しています。',
+            '<b>世界クラスのテクノロジー</b><br>当社では、PGA/LPGA ツアー プレーヤーの大多数が練習やスキル向上に使用している、世界で最も正確で信頼性の高いゴルフ ローンチ モニターである Trackman4 と TrackmanIO を使用しています。',
             '<b>高度な資格を持つインストラクター</b><br>TRACKMAN 認定インストラクター。Trackman University でトレーニングを受けており、Golf Academy of America、Gears Golf、Smart2Move、SportsboxAI、Steve FurlongerによるGolf’s Ground Reaction Forcesなど、一流機関によるトレーニングも受けています。',
             '<b>指導への情熱</b><br>当校のインストラクターは、屋内外でのゴルフ指導に熱心で、熱意があり、経験豊富で、生徒に最高の指導を提供します。',
             '<b>総合的な練習施設</b><br>THE Bangna Driving Range に位置し、広い練習レーン、本物の芝の練習場、標準的なパッティンググリーン、本物のガラスのショートゲームエリアなど、充実した設備を備えています。',

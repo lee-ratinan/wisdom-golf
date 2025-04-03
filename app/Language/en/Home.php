@@ -16,7 +16,7 @@ return [
     'why-academy'  => [
         'title' => 'Why Wisdom Golf Academy?',
         'items' => [
-            '<b>World-Class Technology</b><br>We use “Trackman4” and “TrackmanIO”, the most reliable golf launch monitor in the world, used by professional golfers.',
+            '<b>World-Class Technology</b><br>We use Trackman4 and TrackmanIO, the world’s most accurate and reliable golf launch monitor, used by the majority of PGA/LPGA Tour players to practice and improve their skills.',
             '<b>Highly Qualified Instructors</b><br>“TRACKMAN Certified Instructors”, trained by “TRACKMAN University”, with training from leading institutions i.e. Golf Academy of America, Gears Golf, Smart2Move, SportsboxAI, and Golf’s Ground Reaction Forces by Steve Furlonger.',
             '<b>Passion For Teaching</b><br>Our instructors are attentive, committed and experienced in teaching golf indoors and outdoors, ensuring the best for our students.',
             '<b>Comprehensive Practice Facilities</b><br> Located at “The Bangna Driving Range”, with full facilities i.e. wide practice lanes, real grass practice area, standard putting greens, and real grass short game area.',
