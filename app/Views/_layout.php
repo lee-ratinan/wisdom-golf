@@ -2,7 +2,7 @@
 <html lang="<?= $locale ?>">
 <head>
     <?php
-    $locale_nav = ('en' == $locale ? '' : $locale . '/');
+    $locale_nav = $locale . '/';
     $handle_nav = ('home' == $handle ? '' : $handle);
     ?>
     <meta charset="utf-8">
@@ -36,7 +36,7 @@
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.min.css') ?>" rel="stylesheet">
     <!-- Link Languages -->
-    <link rel="alternate" hreflang="en" href="<?= base_url($handle_nav) ?>">
+    <link rel="alternate" hreflang="en" href="<?= base_url('en/' . $handle_nav) ?>">
     <link rel="alternate" hreflang="th" href="<?= base_url('th/' . $handle_nav) ?>">
     <link rel="alternate" hreflang="ja" href="<?= base_url('ja/' . $handle_nav) ?>">
     <!-- Google tag (gtag.js) -->
@@ -88,9 +88,9 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
             </ul>
             <div class="d-flex gap-2">
-                <a href="<?= base_url($handle_nav) ?>"><img src="<?= base_url('img/flag-us.svg') ?>" alt="English" class="language-flag flag-nav"></a>
-                <a href="<?= base_url('th/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-th.svg') ?>" alt="ภาษาไทย" class="language-flag flag-nav"></a>
-                <a href="<?= base_url('ja/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-jp.svg') ?>" alt="日本語" class="language-flag flag-nav"></a>
+                <a href="<?= base_url('en/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-us-rec.svg') ?>" alt="English" title="English" class="language-flag flag-nav"></a>
+                <a href="<?= base_url('th/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-th-rec.svg') ?>" alt="ภาษาไทย" title="ภาษาไทย" class="language-flag flag-nav"></a>
+                <a href="<?= base_url('ja/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-jp-rec.svg') ?>" alt="日本語" title="日本語" class="language-flag flag-nav"></a>
             </div>
         </div>
     </div>
