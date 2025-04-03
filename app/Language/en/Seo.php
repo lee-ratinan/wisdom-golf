@@ -19,5 +19,15 @@ return [
         'title'       => 'Contact Wisdom Golf Academy | Get in Touch Today',
         'keywords'    => 'contact golf academy, golf lessons Bangkok, golf school phone number, golf instructor email, golf training location, golf academy social media',
         'description' => 'Need golf lessons or have questions? Contact Wisdom Golf Academy in Bangkok. Call, email, or visit us. Find us on Google Maps and connect via social media!'
-    ]
+    ],
+    'packages'    => [
+        'title'       => 'Golf Lesson Packages | Wisdom Golf Academy Bangkok',
+        'keywords'    => 'golf lesson packages, golf training deals, Trackman golf lessons, indoor golf packages, golf academy promotions, private golf coaching',
+        'description' => 'Explore our golf lesson packages at Wisdom Golf Academy in Bangkok. Get the best value for your training with our exclusive deals and Trackman technology!'
+    ],
+    'q-and-a'    => [
+        'title'       => 'Frequently Asked Questions | Wisdom Golf Academy Bangkok',
+        'keywords'    => 'golf academy FAQ, golf lessons questions, Trackman technology, golf training inquiries, indoor golf school, golf coaching information',
+        'description' => 'Have questions about golf lessons? Check our FAQ at Wisdom Golf Academy in Bangkok. Learn about Trackman technology, lesson types, and more!'
+    ],
 ];
