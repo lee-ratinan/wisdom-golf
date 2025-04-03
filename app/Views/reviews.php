@@ -3,7 +3,7 @@ $this->extend('_layout.php');
 $this->section('content');
 ?>
     <h1 class="d-none"><?= lang('Theme.navigations.reviews') ?></h1>
-    <section id="contact" class="contact section mt-5 pt-5 pb-2">
+    <section id="contact" class="contact section pt-0 pb-2">
         <!-- Section Title -->
         <div class="container section-title mt-5 pb-3" data-aos="fade-up">
             <h2><span class="d-none"><?= lang('Reviews.title') ?></span> <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></h2>
