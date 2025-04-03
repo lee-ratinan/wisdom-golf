@@ -1,10 +1,10 @@
 /**
-* Template Name: Dewi
-* Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+ * Template Name: Dewi
+ * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+ * Updated: Aug 07 2024 with Bootstrap v5.3.3
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
 
 (function() {
   "use strict";
@@ -14,8 +14,8 @@
    */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+    // const selectHeader = document.querySelector('#header');
+    // if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
@@ -25,14 +25,14 @@
   /**
    * Mobile nav toggle
    */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  // const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  //
+  // function mobileNavToogle() {
+  //     document.querySelector('body').classList.toggle('mobile-nav-active');
+  //     mobileNavToggleBtn.classList.toggle('bi-list');
+  //     mobileNavToggleBtn.classList.toggle('bi-x');
+  // }
+  // mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -120,7 +120,7 @@
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
+          swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
 
       if (swiperElement.classList.contains("swiper-tab")) {

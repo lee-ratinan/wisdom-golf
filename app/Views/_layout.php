@@ -36,7 +36,7 @@
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.min.css') ?>" rel="stylesheet">
     <!-- Link Languages -->
-    <link rel="alternate" hreflang="en" href="<?= base_url('en/' . $handle_nav) ?>">
+    <link rel="alternate" hreflang="en" href="<?= base_url($handle_nav) ?>">
     <link rel="alternate" hreflang="th" href="<?= base_url('th/' . $handle_nav) ?>">
     <link rel="alternate" hreflang="ja" href="<?= base_url('ja/' . $handle_nav) ?>">
     <!-- Google tag (gtag.js) -->
@@ -53,41 +53,64 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== */ ?>
+
+
+    <style>
+        .upper-header {
+            transition: top 0.3s;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+    </style>
 </head>
 <body class="index-page">
-<header id="header" class="header <?= ('home' == $handle ? '' : 'header-orange') ?> d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-        <a href="<?= base_url() ?>" class="logo d-flex align-items-center me-auto">
-            <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" class="img-fluid">
-        </a>
-        <nav id="navmenu" class="navmenu">
-            <ul>
-                <li><a href="<?= base_url($locale_nav) ?>" class=""><?= lang('Theme.navigations.home') ?></a></li>
-                <li><a href="<?= base_url($locale_nav . 'instructors') ?>" class=""><?= lang('Theme.navigations.instructors') ?></a></li>
-                <li><a href="<?= base_url($locale_nav . 'reviews') ?>" class=""><?= lang('Theme.navigations.reviews') ?></a></li>
-                <li><a href="<?= base_url($locale_nav . 'q-and-a') ?>" class=""><?= lang('Theme.navigations.q-and-a') ?></a></li>
-                <li><a href="<?= base_url($locale_nav . 'packages') ?>" class=""><?= lang('Theme.navigations.packages') ?></a></li>
-                <li><a href="<?= base_url($locale_nav . 'contact') ?>" class=""><?= lang('Theme.navigations.contact') ?></a></li>
-                <li class="dropdown"><a href="#"><span><?= lang('Theme.navigations.languages') ?></span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="<?= base_url('en/' . $handle_nav) ?>"><span><img src="<?= base_url('img/flag-us.svg') ?>" alt="English" class="language-flag me-1"> English</span></a></li>
-                        <li><a href="<?= base_url('th/' . $handle_nav) ?>"><span><img src="<?= base_url('img/flag-th.svg') ?>" alt="ภาษาไทย" class="language-flag me-1"> ภาษาไทย</span></a></li>
-                        <li><a href="<?= base_url('ja/' . $handle_nav) ?>"><span><img src="<?= base_url('img/flag-jp.svg') ?>" alt="日本語" class="language-flag me-1">日本語</span></a></li>
-                    </ul>
-                </li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-        <a class="cta-btn" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
-            <i class="fa-brands fa-line"></i>
-            <span class="d-none"><?= lang('Theme.navigations.line') ?></span>
-        </a>
+<!-- Upper Header -->
+<div class="upper-header header-orange py-2 d-none d-lg-flex justify-content-between px-4">
+    <div>
+        <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="50">
+    </div>
+    <div>
         <a class="cta-btn" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
             <i class="fa-solid fa-phone"></i>
             <span class="d-none"><?= lang('Theme.footer.phone_label') ?></span>
         </a>
+        <a href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
+            <i class="fa-brands fa-line"></i>
+            <span class="d-none"><?= lang('Theme.navigations.line') ?></span>
+        </a>
     </div>
-</header>
+</div>
+<!-- Lower Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-header header-orange text-white">
+    <div class="container-fluid">
+        <a class="navbar-brand d-lg-none" href="#"><img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="50"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav) ?>"><?= lang('Theme.navigations.home') ?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'instructors') ?>"><?= lang('Theme.navigations.instructors') ?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'reviews') ?>"><?= lang('Theme.navigations.reviews') ?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'q-and-a') ?>"><?= lang('Theme.navigations.q-and-a') ?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
+            </ul>
+            <div class="d-flex gap-2">
+                <a href="<?= base_url($handle_nav) ?>"><img src="<?= base_url('img/flag-us.svg') ?>" alt="English" class="language-flag"></a>
+                <a href="<?= base_url('th/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-th.svg') ?>" alt="ภาษาไทย" class="language-flag"></a>
+                <a href="<?= base_url('ja/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-jp.svg') ?>" alt="日本語" class="language-flag"></a>
+            </div>
+        </div>
+    </div>
+</nav>
 <main class="main">
     <?= $this->renderSection('content') ?>
     <!-- CONTACT FORM -->
@@ -170,6 +193,23 @@
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i><span class="d-none"><?= lang('Theme.top') ?></span></a>
 <!-- Preloader -->
 <div id="preloader"></div>
+
+
+<script>
+    let lastScrollTop = 0;
+    const upperHeader = document.querySelector(".upper-header");
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.scrollY;
+        if (scrollTop > lastScrollTop) {
+            upperHeader.style.top = "-50px";
+        } else {
+            upperHeader.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
+
+
 <!-- Vendor JS Files -->
 <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/php-email-form/validate.js') ?>"></script>
