@@ -75,7 +75,7 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-header header-orange text-white">
     <div class="container-fluid">
         <a class="navbar-brand me-1 d-lg-none" href="#">
-            <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="50">
+            <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="40">
         </a>
         <a class="text-white d-lg-none" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
             <i class="fa-solid fa-phone"></i>
