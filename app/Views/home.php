@@ -4,7 +4,7 @@ $this->section('content');
 ?>
     <h1 class="d-none"><?= lang('Theme.navigations.home') ?></h1>
     <!-- About Section -->
-    <section id="about" class="about section orange-background text-white pt-0">
+    <section id="about" class="about section dark-background text-white pt-0">
         <div class="container pt-5">
             <div class="row gy-4">
                 <div class="col-12" data-aos="fade-up" data-aos-delay="100">

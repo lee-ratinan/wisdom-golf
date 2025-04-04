@@ -25,5 +25,6 @@ return [
         'useful_links'   => 'ลิงค์',
         'copyright'      => 'สงวนลิขสิทธิ์ &copy; 2025{0} Wisdom Golf Academy',
     ],
-    'top'         => 'Top'
+    'top'         => 'Top',
+    'add-friend'  => 'เพิ่มเพื่อน',
 ];

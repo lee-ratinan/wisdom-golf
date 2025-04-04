@@ -25,5 +25,6 @@ return [
         'useful_links'   => '便利なリンク',
         'copyright'      => '© 2025{0} Wisdom Golf Academy。著作権所有。',
     ],
-    'top'         => 'Top'
+    'top'         => 'Top',
+    'add-friend'  => 'ADD FRIEND',
 ];

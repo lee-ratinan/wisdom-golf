@@ -46,13 +46,13 @@
     </script>
     <?php $fonts = ('th' == $locale ? 'Noto Sans Thai' : ('ja' == $locale ? 'Noto Sans JP' : '')); ?>
     <?php if (!empty($fonts)): ?><style>body,h1,h2,h3,h4,p,span,.navmenu a, .navmenu a:focus {font-family: '<?= $fonts ?>', sans-serif !important;}</style><?php endif; ?>
-    <?php /* -- =======================================================
+    <!-- -- =======================================================
     * Template Name: Dewi
     * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
     * Updated: Aug 07 2024 with Bootstrap v5.3.3
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
-    ======================================================== */ ?>
+    ======================================================== -->
 </head>
 <body class="index-page">
 <!-- Upper Header -->
@@ -67,7 +67,7 @@
         </a>
         <a class="contact-link contact-line btn btn-line rounded-pill" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
             <i class="fa-brands fa-line"></i>
-            <small>ADD FRIEND</small>
+            <small><?= lang('Theme.add-friend') ?></small>
         </a>
     </div>
 </div>
@@ -77,15 +77,23 @@
         <a class="navbar-brand me-0 d-lg-none" href="#">
             <img src="<?= base_url('img/logo-horizontal-white.png') ?>" alt="<?= lang('Theme.title') ?>" height="40">
         </a>
+        <a class="text-white d-lg-none" href="<?= base_url('en/' . $handle_nav) ?>">
+            <img src="<?= base_url('img/flag-us-rec.svg') ?>" alt="English" title="English" class="language-flag fa-15x">
+        </a>
+        <a class="text-white d-lg-none" href="<?= base_url('th/' . $handle_nav) ?>">
+            <img src="<?= base_url('img/flag-th-rec.svg') ?>" alt="ภาษาไทย" title="ภาษาไทย" class="language-flag fa-15x">
+        </a>
+        <a class="text-white d-lg-none" href="<?= base_url('ja/' . $handle_nav) ?>">
+            <img src="<?= base_url('img/flag-jp-rec.svg') ?>" alt="日本語" title="日本語" class="language-flag fa-15x">
+        </a>
         <a class="text-white d-lg-none" href="tel:<?= getenv('CONTACT_TEL') ?>" target="_blank">
-            <i class="fa-solid fa-phone"></i>
-            <?= getenv('CONTACT_TEL_LABEL') ?>
+            <i class="fa-solid fa-phone fa-15x"></i>
         </a>
         <a class="text-white d-lg-none" href="<?= getenv('CONTACT_LINE') ?>" target="_blank">
-            <i class="fa-brands fa-line fa-2x"></i>
+            <i class="fa-brands fa-line fa-15x"></i>
         </a>
         <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <i class="fa-solid fa-bars" style="font-size: 1.5em;"></i>
+            <i class="fa-solid fa-bars fa-15x" style="font-size: 1.5em;"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
@@ -96,7 +104,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
             </ul>
-            <div class="d-flex gap-2 change-language-buttons">
+            <div class="d-none d-lg-flex gap-2 change-language-buttons">
                 <a href="<?= base_url('en/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-us-rec.svg') ?>" alt="English" title="English" class="language-flag flag-nav"></a>
                 <a href="<?= base_url('th/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-th-rec.svg') ?>" alt="ภาษาไทย" title="ภาษาไทย" class="language-flag flag-nav"></a>
                 <a href="<?= base_url('ja/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-jp-rec.svg') ?>" alt="日本語" title="日本語" class="language-flag flag-nav"></a>
