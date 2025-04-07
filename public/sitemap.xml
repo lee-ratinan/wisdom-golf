@@ -5,7 +5,8 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/"/>
         <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/"/>
-        <lastmod>2024-04-04</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wisdomgolfacademy.com"/>
+        <lastmod>2024-04-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,7 +15,8 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/instructors"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/instructors"/>
         <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/instructors"/>
-        <lastmod>2024-04-04</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wisdomgolfacademy.com/instructors"/>
+        <lastmod>2024-04-07</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -23,7 +25,8 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/reviews"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/reviews"/>
         <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/reviews"/>
-        <lastmod>2024-04-04</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wisdomgolfacademy.com/reviews"/>
+        <lastmod>2024-04-07</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -32,7 +35,8 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/q-and-a"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/q-and-a"/>
         <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/q-and-a"/>
-        <lastmod>2024-04-04</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wisdomgolfacademy.com/q-and-a"/>
+        <lastmod>2024-04-07</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -41,7 +45,8 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/packages"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/packages"/>
         <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/packages"/>
-        <lastmod>2024-04-04</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wisdomgolfacademy.com/packages"/>
+        <lastmod>2024-04-07</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -50,7 +55,8 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://wisdomgolfacademy.com/en/contact"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://wisdomgolfacademy.com/ja/contact"/>
         <xhtml:link rel="alternate" hreflang="th" href="https://wisdomgolfacademy.com/th/contact"/>
-        <lastmod>2024-04-04</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wisdomgolfacademy.com/contact"/>
+        <lastmod>2024-04-07</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
