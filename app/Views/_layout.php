@@ -9,7 +9,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $page ?> - <?= lang('Theme.title') ?></title>
     <meta name="description" content="<?= lang('Seo.' . $handle . '.description') ?>">
-    <meta name="keywords" content="<?= lang('Seo.' . $handle . '.keywords') ?>">
+    <meta name="keywords" content="<?= lang('Seo.all-pages.keywords') ?> <?= lang('Seo.' . $handle . '.keywords') ?>">
     <meta name="author" content="<?= lang('Theme.author') ?>">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="<?= $page ?> - <?= lang('Theme.title') ?>">

@@ -1,5 +1,8 @@
 <?php
 return [
+    'all-pages'   => [
+        'keywords' => 'golf teaching school, Bangna golf driving range, Bang Na golf driving range, Bangna golf lessons, Bang Na golf lessons, golf lessons'
+    ],
     'home'        => [
         'title'       => 'Wisdom Golf Academy – Bangkok’s Premier Indoor Golf School',
         'keywords'    => 'indoor golf school Bangkok, golf lessons Bangkok, TrackMan golf training, golf academy Bangkok, private golf coaching, Bangna Driving Range, PGA golf simulator, golf practice Bangkok',

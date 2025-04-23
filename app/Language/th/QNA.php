@@ -1,5 +1,6 @@
 <?php
 return [
+    'paragraph' => '',
     'questions' => [
         'ขึ้นสั้นยังไงให้ตีไกล',
         'ผู้หญิงที่อยากตี Fairway Wood ให้ลอย',
