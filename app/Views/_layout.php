@@ -9,7 +9,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $page ?> - <?= lang('Theme.title') ?></title>
     <meta name="description" content="<?= lang('Seo.' . $handle . '.description') ?>">
-    <meta name="keywords" content="<?= lang('Seo.all-pages.keywords') ?> <?= lang('Seo.' . $handle . '.keywords') ?>">
+    <meta name="keywords" content="<?= lang('Seo.all-pages.keywords') ?>, <?= lang('Seo.' . $handle . '.keywords') ?>">
     <meta name="author" content="<?= lang('Theme.author') ?>">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="<?= $page ?> - <?= lang('Theme.title') ?>">
@@ -42,9 +42,9 @@
     <link rel="alternate" hreflang="x-default" href="<?= base_url($handle_nav) ?>">
     <link rel="canonical" href="<?= base_url($handle_nav) ?>">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= getenv('ANALYTICS_ID') ?>"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16951874499"></script>
     <script>
-        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '<?= getenv('ANALYTICS_ID') ?>');
+	window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16951874499');
     </script>
     <?php $fonts = ('th' == $locale ? 'Noto Sans Thai' : ('ja' == $locale ? 'Noto Sans JP' : '')); ?>
     <?php if (!empty($fonts)): ?><style>body,h1,h2,h3,h4,p,span,.navmenu a, .navmenu a:focus {font-family: '<?= $fonts ?>', sans-serif !important;}</style><?php endif; ?>

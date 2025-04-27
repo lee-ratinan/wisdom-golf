@@ -2,7 +2,7 @@
 $this->extend('_layout.php');
 $this->section('content');
 ?>
-    <h1 class="d-none"><?= lang('Theme.navigations.instructors') ?></h1>
+    <h1 class="d-none"><?= lang('Theme.navigations.instructors') ?> - <?= lang('Seo.all-pages.keywords') ?></h1>
     <!-- Team Section -->
     <section id="team" class="team section light-background pt-5 mt-0">
         <!-- Section Title -->

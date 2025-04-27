@@ -2,7 +2,7 @@
 $this->extend('_layout.php');
 $this->section('content');
 ?>
-    <h1 class="d-none"><?= lang('Theme.navigations.packages') ?></h1>
+    <h1 class="d-none"><?= lang('Theme.navigations.packages') ?> - <?= lang('Seo.all-pages.keywords') ?></h1>
     <section id="packages" class="contact section pt-0">
         <!-- Section Title -->
         <div class="container section-title mt-5 pb-3" data-aos="fade-up">

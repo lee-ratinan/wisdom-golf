@@ -27,4 +27,5 @@ return [
     ],
     'top'         => 'Top',
     'add-friend'  => 'เพิ่มเพื่อน',
+	'search'      => 'ค้นหา'
 ];

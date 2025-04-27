@@ -2,7 +2,7 @@
 return [
     'hero'         => [
         'title'    => 'Wisdom Golf Academy',
-        'subtitle' => 'Where you become a better golfer, powered by technology.',
+        'subtitle' => 'Where you become a better golfer, powered by Trackman technology.',
     ],
     'cta'          => [
         'get-started' => 'Get Started',

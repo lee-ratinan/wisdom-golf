@@ -2,7 +2,7 @@
 $this->extend('_layout.php');
 $this->section('content');
 ?>
-    <h1 class="d-none"><?= lang('Theme.navigations.home') ?></h1>
+    <h1 class="d-none"><?= lang('Theme.navigations.home') ?> - <?= lang('Seo.all-pages.keywords') ?></h1>
     <!-- About Section -->
     <section id="about" class="about section dark-background text-white pt-0">
         <div class="container pt-5">

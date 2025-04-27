@@ -2,7 +2,7 @@
 $this->extend('_layout.php');
 $this->section('content');
 ?>
-    <h1 class="d-none"><?= lang('Theme.navigations.contact') ?></h1>
+    <h1 class="d-none"><?= lang('Theme.navigations.contact') ?> - <?= lang('Seo.all-pages.keywords') ?></h1>
     <!-- Contact Section -->
     <section id="contact" class="contact section pt-0">
         <!-- Section Title -->

@@ -1,7 +1,7 @@
 <?php
 return [
     'all-pages'   => [
-        'keywords' => ''
+        'keywords' => 'ゴルフ指導学校、バンナーゴルフ練習場、トラックマンシミュレーター、バンコクゴルフアカデミー、屋内ゴルフレッスン、ゴルフ練習'
     ],
     'home'        => [
         'title'       => 'Wisdom Golf Academyー – バンコクのプレミア屋内ゴルフ スクール',
