@@ -2,5 +2,5 @@
 return [
     'title'     => 'Blog',
     'loading'   => 'Loading...',
-    'read_more' => 'Read More',
+    'read-more' => 'Read More',
 ];

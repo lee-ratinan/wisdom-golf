@@ -1942,3 +1942,6 @@ section,
 .language-flag.flag-nav {
   height: 1.2em !important;
 }
+.blog-excerpt p {
+  margin-bottom: 0;
+}

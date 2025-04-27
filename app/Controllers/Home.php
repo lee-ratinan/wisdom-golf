@@ -31,6 +31,70 @@ class Home extends BaseController
     }
 
     /**
+     * Call cURL
+     * @param string $url
+     * @param string $method
+     * @return array
+     */
+    private function callCurl(string $url, string $method = 'GET'): array
+    {
+        // cURL
+        try {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+            $response = curl_exec($ch);
+            curl_close($ch);
+            return json_decode($response, true);
+        } catch (\Exception $e) {
+            return [];
+        }
+    }
+
+    /**
+     * Format blog posts
+     * @param $url
+     * @param $locale
+     * @return array
+     */
+    private function retrieveBlogPosts($url, $locale): array
+    {
+        $posts = $this->callCurl($url);
+        $array = [];
+        $tags  = [];
+        $media = [];
+        if (!empty($posts)) {
+            foreach ($posts as $post) {
+                $array[] = [
+                    'url'      => base_url($locale . '/blog/view/' . $post['slug'] . '/' . $post['id']),
+                    'title'    => @$post['title']['rendered'],
+                    'date'     => @date('d M Y', strtotime(substr($post['date'], 0, 10))),
+                    'excerpt'  => @$post['excerpt']['rendered'],
+                    'tag_ids'  => @$post['tags'],
+                    'media_id' => @$post['featured_media']
+                ];
+                if (!empty($post['tags'])) {
+                    foreach ($post['tags'] as $tag) {
+                        $tags[] = $tag;
+                    }
+                }
+                if (!empty($post['featured_media'])) {
+                    $media[] = $post['featured_media'];
+                }
+            }
+            $tags  = array_unique($tags);
+            $media = array_unique($media);
+        }
+        return [
+            'posts' => $array,
+            'tags'  => $tags,
+            'media' => $media
+        ];
+    }
+
+    /**
      * Home page
      * @return string
      */
@@ -155,13 +219,36 @@ class Home extends BaseController
      */
     public function blog(): string
     {
-        $locale = $this->request->getLocale();
-        $data   = [
+        $locale      = $this->request->getLocale();
+        $config      = $this->getBlogConfig($locale);
+        $page        = $this->request->getVar('page') ?? 1;
+        $category_id = $config['category_id'];
+        $blog_url    = $config['blog_url'] . 'posts?page=' . $page . '&per_page=10&categories=' . $category_id;
+        $contents    = $this->retrieveBlogPosts($blog_url, $locale);
+        // TAGS
+        $tags        = [];
+        if (!empty($contents['tags'])) {
+            $raw_tags    = $this->callCurl($config['blog_url'] . 'tags?include=' . implode(',', $contents['tags']));
+            foreach ($raw_tags as $tag) {
+                $tags[$tag['id']] = $tag['slug'];
+            }
+        }
+        // MEDIA
+        $media_list = [];
+        if (!empty($contents['media'])) {
+            $raw_media = $this->callCurl($config['blog_url'] . 'media?include=' . implode(',', $contents['media']));
+            foreach ($raw_media as $media_item) {
+                $media_list[$media_item['id']] = $media_item['media_details']['sizes']['thumbnail']['source_url'];
+            }
+        }
+        $data        = [
             'page'   => lang('Theme.navigations.blog'),
             'handle' => 'blog',
             'mode'   => 'list',
-            'config' => $this->getBlogConfig($locale),
-            'locale' => $locale
+            'locale' => $locale,
+            'posts'  => $contents['posts'],
+            'tags'   => $tags,
+            'media'  => $media_list,
         ];
         return view('blog_list', $data);
     }
