@@ -61,14 +61,17 @@ class Home extends BaseController
      */
     private function retrieveBlogPosts($url, $locale): array
     {
-        $posts = $this->callCurl($url);
-        $array = [];
-        $tags  = [];
-        $media = [];
-        if (!empty($posts)) {
+        $posts       = $this->callCurl($url);
+        $array_posts = [];
+        $tag_list    = [];
+        $media_list  = [];
+        if (isset($posts[0])) {
+            // POSTS
+            $tags    = [];
+            $media   = [];
             foreach ($posts as $post) {
-                $array[] = [
-                    'url'      => base_url($locale . '/blog/view/' . $post['slug'] . '/' . $post['id']),
+                $array_posts[] = [
+                    'url'      => base_url($locale . '/blog/view/' . $post['id']),
                     'title'    => @$post['title']['rendered'],
                     'date'     => @date('d M Y', strtotime(substr($post['date'], 0, 10))),
                     'excerpt'  => @$post['excerpt']['rendered'],
@@ -84,13 +87,28 @@ class Home extends BaseController
                     $media[] = $post['featured_media'];
                 }
             }
-            $tags  = array_unique($tags);
-            $media = array_unique($media);
+            $tags   = array_unique($tags);
+            $media  = array_unique($media);
+            $config = $this->getBlogConfig($locale);
+            // TAGS
+            if (!empty($tags)) {
+                $raw_tags    = $this->callCurl($config['blog_url'] . 'tags?include=' . implode(',', $tags));
+                foreach ($raw_tags as $tag) {
+                    $tag_list[$tag['id']] = $tag['slug'];
+                }
+            }
+            // MEDIA
+            if (!empty($media)) {
+                $raw_media = $this->callCurl($config['blog_url'] . 'media?include=' . implode(',', $media));
+                foreach ($raw_media as $media_item) {
+                    $media_list[$media_item['id']] = $media_item['media_details']['sizes']['thumbnail']['source_url'];
+                }
+            }
         }
         return [
-            'posts' => $array,
-            'tags'  => $tags,
-            'media' => $media
+            'posts' => $array_posts,
+            'tags'  => $tag_list,
+            'media' => $media_list
         ];
     }
 
@@ -225,30 +243,73 @@ class Home extends BaseController
         $category_id = $config['category_id'];
         $blog_url    = $config['blog_url'] . 'posts?page=' . $page . '&per_page=10&categories=' . $category_id;
         $contents    = $this->retrieveBlogPosts($blog_url, $locale);
-        // TAGS
-        $tags        = [];
-        if (!empty($contents['tags'])) {
-            $raw_tags    = $this->callCurl($config['blog_url'] . 'tags?include=' . implode(',', $contents['tags']));
-            foreach ($raw_tags as $tag) {
-                $tags[$tag['id']] = $tag['slug'];
-            }
-        }
-        // MEDIA
-        $media_list = [];
-        if (!empty($contents['media'])) {
-            $raw_media = $this->callCurl($config['blog_url'] . 'media?include=' . implode(',', $contents['media']));
-            foreach ($raw_media as $media_item) {
-                $media_list[$media_item['id']] = $media_item['media_details']['sizes']['thumbnail']['source_url'];
-            }
-        }
         $data        = [
             'page'   => lang('Theme.navigations.blog'),
             'handle' => 'blog',
             'mode'   => 'list',
             'locale' => $locale,
             'posts'  => $contents['posts'],
-            'tags'   => $tags,
-            'media'  => $media_list,
+            'tags'   => $contents['tags'],
+            'media'  => $contents['media'],
+            'q'      => null,
+            'pg'     => $page,
+            'tag'    => null
+        ];
+        return view('blog_list', $data);
+    }
+
+    /**
+     * Search blog
+     * @return string
+     */
+    public function blog_search(): string
+    {
+        $locale      = $this->request->getLocale();
+        $config      = $this->getBlogConfig($locale);
+        $search      = $this->request->getVar('q');
+        $page        = $this->request->getVar('page') ?? 1;
+        $category_id = $config['category_id'];
+        $blog_url    = $config['blog_url'] . 'posts?page=' . $page . '&per_page=10&categories=' . $category_id . '&search=' . $search;
+        $contents    = $this->retrieveBlogPosts($blog_url, $locale);
+        $data        = [
+            'page'   => lang('Theme.navigations.blog'),
+            'handle' => 'blog',
+            'mode'   => 'search',
+            'locale' => $locale,
+            'posts'  => $contents['posts'],
+            'tags'   => $contents['tags'],
+            'media'  => $contents['media'],
+            'q'      => $search,
+            'pg'     => $page,
+            'tag'    => null
+        ];
+        return view('blog_list', $data);
+    }
+
+    /**
+     * View blog tags
+     * @param int $tag_id
+     * @return string
+     */
+    public function blog_tag(int $tag_id): string
+    {
+        $locale      = $this->request->getLocale();
+        $config      = $this->getBlogConfig($locale);
+        $page        = $this->request->getVar('page') ?? 1;
+        $category_id = $config['category_id'];
+        $blog_url    = $config['blog_url'] . 'posts?page=' . $page . '&per_page=10&categories=' . $category_id . '&tags=' . $tag_id;
+        $contents    = $this->retrieveBlogPosts($blog_url, $locale);
+        $data        = [
+            'page'   => lang('Theme.navigations.blog'),
+            'handle' => 'blog',
+            'mode'   => 'tag',
+            'locale' => $locale,
+            'posts'  => $contents['posts'],
+            'tags'   => $contents['tags'],
+            'media'  => $contents['media'],
+            'q'      => null,
+            'pg'     => $page,
+            'tag'    => $tag_id
         ];
         return view('blog_list', $data);
     }
@@ -260,14 +321,16 @@ class Home extends BaseController
      */
     public function blog_view(string $slug, int $id) : string
     {
-        $locale = $this->request->getLocale();
-        $data   = [
-            'page'    => lang('Theme.navigations.blog'),
+        $locale     = $this->request->getLocale();
+        $config     = $this->getBlogConfig($locale);
+        $url        = $config['blog_url'] . 'posts/' . $id;
+        $post_data  = $this->callCurl($url);
+        $post_title = $post_data['title']['rendered'];
+        $data       = [
+            'page'    => $post_title . ' - ' . lang('Theme.navigations.blog'),
             'handle'  => 'blog',
             'mode'    => 'view',
-            'config'  => $this->getBlogConfig($locale),
-            'locale'  => $locale,
-            'blog_id' => $id
+            'locale'  => $locale
         ];
         return view('blog_read', $data);
     }
