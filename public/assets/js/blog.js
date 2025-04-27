@@ -10,12 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
          $('#blog-list').append(the_post);
       })
    }
+   let formatView = function (post) {
+
+   }
    if ('list' === mode) {
       // JUST LIST THE POSTS
       $.ajax({
-         url: blog_url + 'posts?page=1&per_page=10&context=embed&categories=' + category_id,
+         url: blog_url + 'posts?page=1&per_page=10&context=embed&categories=' + category_id
       }).done(function(response) {
          formatPosts(response);
+      });
+   } else if ('view' === mode) {
+      // ONLY 1 POST
+      $.ajax({
+         url: blog_url + 'posts/' + blog_id
+      }).done(function(response) {
+         formatView(response);
       });
    }
 });

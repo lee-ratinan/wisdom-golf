@@ -151,6 +151,7 @@ class Home extends BaseController
 
     /**
      * Blog page
+     * @return string
      */
     public function blog(): string
     {
@@ -163,5 +164,24 @@ class Home extends BaseController
             'locale' => $locale
         ];
         return view('blog_list', $data);
+    }
+
+    /**
+     * @param string $slug
+     * @param int $id
+     * @return string
+     */
+    public function blog_view(string $slug, int $id) : string
+    {
+        $locale = $this->request->getLocale();
+        $data   = [
+            'page'    => lang('Theme.navigations.blog'),
+            'handle'  => 'blog',
+            'mode'    => 'view',
+            'config'  => $this->getBlogConfig($locale),
+            'locale'  => $locale,
+            'blog_id' => $id
+        ];
+        return view('blog_read', $data);
     }
 }

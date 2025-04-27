@@ -7,8 +7,7 @@ $this->section('content');
     <section id="blog" class="blog section pt-0">
         <!-- Section Title -->
         <div class="container section-title mt-5" data-aos="fade-up">
-            <h2><span class="d-none"><?= lang('Blog.title') ?></span> <i class="fa-solid fa-chevron-right"></i><i
-                        class="fa-solid fa-chevron-right"></i></h2>
+            <h2><span class="d-none"><?= lang('Blog.title') ?></span> <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></h2>
             <p><?= lang('Blog.title') ?></p>
         </div><!-- End Section Title -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
