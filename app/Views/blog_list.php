@@ -29,6 +29,16 @@ $this->section('content');
                             <?= lang('Blog.no-result') ?>
                         </div>
                     <?php else : ?>
+                        <p>
+                            <?= lang('Blog.showing', [$pg, $total_pages]) ?>
+                            <?php if (!empty($q)) : ?>
+                                <?= lang('Blog.search_result', [$q]) ?>
+                            <?php endif; ?>
+                            <?php if (!empty($tag)) : ?>
+                                <?= lang('Blog.tag_filter', [$tag]) ?>
+                            <?php endif; ?>
+                            <?= lang('Blog.total_posts', [$total_posts]) ?>
+                        </p>
                         <?php foreach ($posts as $post) : ?>
                         <div class="card mb-3">
                             <div class="card-body">
@@ -52,13 +62,20 @@ $this->section('content');
             </div>
             <div class="row">
                 <div class="col text-center">
+                    <!-- PREV -->
                     <?php if (1 == $pg) : ?>
                         <?= lang('blog.previous') ?>
                     <?php else : ?>
                         <a href="?page=<?= $pg - 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('blog.previous') ?></a>
                     <?php endif; ?>
+                    <!-- CURRENT PAGE -->
                     | <?= lang('Blog.page', [$pg]) ?> |
-                    <a href="?page=<?= $pg + 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('blog.next') ?></a>
+                    <!-- NEXT -->
+                    <?php if ($total_pages >= $pg + 1) : ?>
+                        <a href="?page=<?= $pg + 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('blog.next') ?></a>
+                    <?php else: ?>
+                        <?= lang('blog.next') ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
