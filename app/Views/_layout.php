@@ -105,6 +105,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'q-and-a') ?>"><?= lang('Theme.navigations.q-and-a') ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'blog') ?>"><?= lang('Theme.navigations.blog') ?></a></li>
             </ul>
             <div class="d-none d-lg-flex gap-2 change-language-buttons">
                 <a href="<?= base_url('en/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-us-rec.svg') ?>" alt="English" title="English" class="language-flag flag-nav"></a>
@@ -204,5 +205,9 @@
 <script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js') ?>"></script>
 <!-- Main JS File -->
 <script src="<?= base_url('assets/js/main.min.js') ?>"></script>
+<?php if ('blog' == $handle) : ?>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?= base_url('assets/js/blog.js') ?>"></script>
+<?php endif; ?>
 </body>
 </html>

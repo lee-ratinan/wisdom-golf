@@ -10,7 +10,8 @@ return [
         'q-and-a'     => 'Q&A',
         'packages'    => 'パッケージ',
         'line'        => 'LINE',
-        'languages'   => '言語'
+        'languages'   => '言語',
+        'blog'        => 'ブログ'
     ],
     'languages'   => [
         'th' => 'タイ語',

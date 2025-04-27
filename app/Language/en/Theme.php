@@ -10,7 +10,8 @@ return [
         'q-and-a'     => 'Q&A',
         'packages'    => 'Packages',
         'line'        => 'LINE',
-        'languages'   => 'Languages'
+        'languages'   => 'Languages',
+        'blog'        => 'Blog'
     ],
     'languages'   => [
         'th' => 'Thai',
