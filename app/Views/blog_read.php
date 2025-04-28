@@ -11,24 +11,25 @@ $this->section('content');
                         <i class="fa-solid fa-chevron-right"></i>
                         <a href="<?= base_url($locale . '/blog') ?>"><?= lang('Theme.navigations.blog') ?></a>
                         <i class="fa-solid fa-chevron-right"></i>
-                        <span id="this-blog-title">###</span></p>
+                        <span id="this-blog-title"><?= $title ?></span></p>
                 </div>
             </div>
         </div>
         <!-- Section Title -->
         <div class="container section-title mt-5" data-aos="fade-up">
             <h2><span class="d-none"><?= lang('Blog.title') ?></span> <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></h2>
-            <p id="blog-title">###</p>
+            <p id="blog-title"><?= $title ?></p>
         </div><!-- End Section Title -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
                 <div class="col-md-10 col-lg-8">
-                    <i class="fa-solid fa-spinner fa-spin"></i> <?= lang('Blog.loading') ?>
+                    <pre>
+                        <?= print_r($post) ?>
+                    </pre>
                 </div>
             </div>
         </div>
     </section>
-    <script>let mode = '<?= $mode ?>', category_id = '<?= $config['category_id'] ?>', blog_url = '<?= $config['blog_url'] ?>', base_url = '<?= base_url('blog/view') ?>/', read_more = '<?= lang('Blog.read_more') ?>', blog_id = <?= $blog_id ?>;</script>
 <?php
 $this->endSection();
 ?>

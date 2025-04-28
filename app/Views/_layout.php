@@ -205,9 +205,5 @@
 <script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js') ?>"></script>
 <!-- Main JS File -->
 <script src="<?= base_url('assets/js/main.min.js') ?>"></script>
-<?php if ('blog' == $handle) : ?>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="<?= base_url('assets/js/blog.js') ?>"></script>
-<?php endif; ?>
 </body>
 </html>

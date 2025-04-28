@@ -24,21 +24,24 @@ $this->section('content');
             </form>
             <div class="row gy-4">
                 <div class="col">
+                    <p>
+                        <?= lang('Blog.showing', [$pg, $total_pages]) ?>
+                        <?php if (!empty($q)) : ?>
+                            <?= lang('Blog.search_result', [$q]) ?>
+                        <?php endif; ?>
+                        <?php if (!empty($tag)) : ?>
+                            <?= lang('Blog.tag_filter', [$tag]) ?>
+                        <?php endif; ?>
+                        <?= lang('Blog.total_posts', [$total_posts]) ?>
+                        <?php if (!empty($q) || !empty($tag)) : ?>
+                            | <a href="<?= base_url($locale . '/blog') ?>"><?= lang('Blog.clear_filter') ?></a>
+                        <?php endif; ?>
+                    </p>
                     <?php if (empty($posts)) : ?>
                         <div class="alert alert-warning" role="alert">
                             <?= lang('Blog.no-result') ?>
                         </div>
                     <?php else : ?>
-                        <p>
-                            <?= lang('Blog.showing', [$pg, $total_pages]) ?>
-                            <?php if (!empty($q)) : ?>
-                                <?= lang('Blog.search_result', [$q]) ?>
-                            <?php endif; ?>
-                            <?php if (!empty($tag)) : ?>
-                                <?= lang('Blog.tag_filter', [$tag]) ?>
-                            <?php endif; ?>
-                            <?= lang('Blog.total_posts', [$total_posts]) ?>
-                        </p>
                         <?php foreach ($posts as $post) : ?>
                         <div class="card mb-3">
                             <div class="card-body">
