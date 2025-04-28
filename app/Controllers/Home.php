@@ -82,7 +82,7 @@ class Home extends BaseController
                 $array_posts[] = [
                     'url'      => base_url($locale . '/blog/view/' . $post['id']),
                     'title'    => @$post['title']['rendered'],
-                    'date'     => @date('d M Y', strtotime(substr($post['date'], 0, 10))),
+                    'date'     => date('d M Y', strtotime(substr(@$post['date'], 0, 10))),
                     'excerpt'  => @$post['excerpt']['rendered'],
                     'tag_ids'  => @$post['tags'],
                     'media_id' => @$post['featured_media']

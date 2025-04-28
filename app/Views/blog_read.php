@@ -23,9 +23,13 @@ $this->section('content');
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
                 <div class="col-md-10 col-lg-8">
-                    <pre>
-                        <?= print_r($post) ?>
-                    </pre>
+                    <div><i class="fa-solid fa-calendar-days"></i> <?= date('d M Y', strtotime(substr($post['date'], 0, 10))) ?></div>
+                    <article class="my-5">
+                        <?= $post['content']['rendered'] ?>
+                    </article>
+<!--                    <pre>-->
+<!--                        --><?php //= print_r($post) ?>
+<!--                    </pre>-->
                 </div>
             </div>
         </div>
