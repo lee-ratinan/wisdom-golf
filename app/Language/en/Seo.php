@@ -28,9 +28,13 @@ return [
         'keywords'    => 'golf lesson packages, golf training deals, Trackman golf lessons, indoor golf packages, golf academy promotions, private golf coaching',
         'description' => 'Explore our golf lesson packages at Wisdom Golf Academy in Bangkok. Get the best value for your training with our exclusive deals and Trackman technology!'
     ],
-    'q-and-a'    => [
+    'q-and-a'     => [
         'title'       => 'Frequently Asked Questions | Wisdom Golf Academy Bangkok',
         'keywords'    => 'golf academy FAQ, golf lessons questions, Trackman technology, golf training inquiries, indoor golf school, golf coaching information',
         'description' => 'Have questions about golf lessons? Check our FAQ at Wisdom Golf Academy in Bangkok. Learn about Trackman technology, lesson types, and more!'
     ],
+    'blog'        => [
+        'keywords'    => 'golf blog, Bangkok golf school, golf tips, golf lessons Bangkok, golf training Thailand, golf swing advice, golf news, golf articles, golf techniques, improve golf game',
+        'description' => 'Discover pro golf tips, lesson highlights, and swing secrets straight from our Bangkok golf school. Stay sharp and in-the-know with the latest in golf training and stories from the green.',
+    ]
 ];

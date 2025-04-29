@@ -37,6 +37,9 @@ $this->section('content');
                         </div>
                     <?php endif; ?>
                 </div>
+                <pre>
+                    <?php print_r($post) ?>
+                </pre>
             </div>
         </div>
     </section>

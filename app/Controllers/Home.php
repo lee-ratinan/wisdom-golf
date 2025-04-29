@@ -371,15 +371,25 @@ class Home extends BaseController
                 }
             }
         }
-        $data       = [
-            'page'    => $post_title . ' - ' . lang('Theme.navigations.blog'),
-            'handle'  => 'blog',
-            'mode'    => 'view',
-            'locale'  => $locale,
-            'title'   => $post_title,
-            'post'    => $post_data,
-            'tags'    => $tags,
+        $seo_image = '';
+        if (!empty($post_data['featured_media'])) {
+            $media_url = $config['blog_url'] . 'media/' . $post_data['featured_media'];
+            $raw_media = $this->callCurl($media_url);
+            if (!empty($raw_media['body'])) {
+                $seo_image = $raw_media['body']['media_details']['sizes']['medium']['source_url'];
+            }
+        }
+        $data = [
+            'page'            => $post_title . ' - ' . lang('Theme.navigations.blog'),
+            'handle'          => 'blog',
+            'mode'            => 'view',
+            'locale'          => $locale,
+            'title'           => $post_title,
+            'post'            => $post_data,
+            'tags'            => $tags,
+            'seo_description' => strip_tags($post_data['excerpt']['rendered']),
+            'seo_image'       => $seo_image
         ];
-        return view('blog_read', $data);
+        return view('blog_view', $data);
     }
 }

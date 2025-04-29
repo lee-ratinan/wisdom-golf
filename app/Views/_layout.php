@@ -8,13 +8,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $page ?> - <?= lang('Theme.title') ?></title>
-    <meta name="description" content="<?= lang('Seo.' . $handle . '.description') ?>">
+    <meta name="description" content="<?= (empty($seo_description) ? lang('Seo.' . $handle . '.description') : $seo_description) ?>">
     <meta name="keywords" content="<?= lang('Seo.all-pages.keywords') ?>, <?= lang('Seo.' . $handle . '.keywords') ?>">
     <meta name="author" content="<?= lang('Theme.author') ?>">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="<?= $page ?> - <?= lang('Theme.title') ?>">
-    <meta property="og:description" content="<?= lang('Seo.' . $handle . '.description') ?>">
-    <meta property="og:image" content="<?= base_url('img/home-intro.jpg') ?>">
+    <meta property="og:description" content="<?= (empty($seo_description) ? lang('Seo.' . $handle . '.description') : $seo_description) ?>">
+    <meta property="og:image" content="<?= (empty($seo_image) ? base_url('img/home-intro.jpg') : $seo_image) ?>">
     <meta property="og:url" content="<?= base_url($locale_nav . $handle_nav) ?>">
     <!-- Favicons -->
     <link href="<?= base_url('img/favicon-180.png') ?>" rel="icon">
