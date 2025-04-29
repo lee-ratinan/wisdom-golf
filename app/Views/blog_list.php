@@ -52,12 +52,18 @@ $this->section('content');
                                     <a href="<?= $post['url'] ?>"><img src="<?= $media[$post['media_id']] ?>" alt="<?= $post['title'] ?>" class="img-fluid img-thumbnail" /></a>
                                 </div>
                                 <?php endif; ?>
-                                <div><i class="fa-solid fa-calendar-days"></i> <?= $post['date'] ?></div>
+                                <div>
+                                    <i class="fa-solid fa-calendar-days"></i> <?= $post['date'] ?>
+                                    &nbsp; &nbsp; <i class="fa-solid fa-user"></i> <?= $authors[$post['author']] ?>
+                                    <?php if (!empty($post['tag_ids'])) : ?>
+                                        &nbsp; &nbsp; <i class="fa-solid fa-tags"></i>
+                                        <?php foreach ($post['tag_ids'] as $tag_id) : ?>
+                                            <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= $tags[$tag_id] ?></a>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
                                 <div class="blog-excerpt my-2"><?= $post['excerpt'] ?></div>
                                 <div class="my-2"><a href="<?= $post['url'] ?>"><?= lang('Blog.read-more') ?></a></div>
-                                <?php if (!empty($post['tag_ids'])) : ?>
-                                    <div><i class="fa-solid fa-tags"></i> <?php foreach ($post['tag_ids'] as $tag_id) : ?> <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= $tags[$tag_id] ?></a> <?php endforeach; ?></div>
-                                <?php endif; ?>
                             </div>
                         </div>
                         <?php endforeach; ?>

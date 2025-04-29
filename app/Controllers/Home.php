@@ -74,14 +74,17 @@ class Home extends BaseController
         $array_posts = [];
         $tag_list    = [];
         $media_list  = [];
+        $author_list = [];
         if (isset($posts[0])) {
             // POSTS
             $tags    = [];
             $media   = [];
+            $authors = [];
             foreach ($posts as $post) {
                 $array_posts[] = [
                     'url'      => base_url($locale . '/blog/view/' . $post['id']),
                     'title'    => @$post['title']['rendered'],
+                    'author'   => @$post['author'],
                     'date'     => date('d M Y', strtotime(substr(@$post['date'], 0, 10))),
                     'excerpt'  => @$post['excerpt']['rendered'],
                     'tag_ids'  => @$post['tags'],
@@ -95,10 +98,12 @@ class Home extends BaseController
                 if (!empty($post['featured_media'])) {
                     $media[] = $post['featured_media'];
                 }
+                $authors[] = $post['author'];
             }
-            $tags   = array_unique($tags);
-            $media  = array_unique($media);
-            $config = $this->getBlogConfig($locale);
+            $tags    = array_unique($tags);
+            $media   = array_unique($media);
+            $authors = array_unique($authors);
+            $config  = $this->getBlogConfig($locale);
             // TAGS
             if (!empty($tags)) {
                 $response = $this->callCurl($config['blog_url'] . 'tags?include=' . implode(',', $tags));
@@ -113,6 +118,14 @@ class Home extends BaseController
                 $raw_media = $response['body'];
                 foreach ($raw_media as $media_item) {
                     $media_list[$media_item['id']] = $media_item['media_details']['sizes']['thumbnail']['source_url'];
+                }
+            }
+            // AUTHORS
+            if (!empty($authors)) {
+                $response    = $this->callCurl($config['blog_url'] . 'users?include=' . implode(',', $authors));
+                $raw_authors = $response['body'];
+                foreach ($raw_authors as $author) {
+                    $author_list[$author['id']] = $author['name'];
                 }
             }
         }
@@ -132,6 +145,7 @@ class Home extends BaseController
             'posts'       => $array_posts,
             'tags'        => $tag_list,
             'media'       => $media_list,
+            'authors'     => $author_list,
             'total_pages' => $total_pages,
             'total_posts' => $total_posts,
         ];
@@ -276,6 +290,7 @@ class Home extends BaseController
             'posts'       => $contents['posts'],
             'tags'        => $contents['tags'],
             'media'       => $contents['media'],
+            'authors'     => $contents['authors'],
             'q'           => null,
             'pg'          => $page,
             'tag'         => null,
@@ -306,6 +321,7 @@ class Home extends BaseController
             'posts'       => $contents['posts'],
             'tags'        => $contents['tags'],
             'media'       => $contents['media'],
+            'authors'     => $contents['authors'],
             'q'           => $search,
             'pg'          => $page,
             'tag'         => null,
@@ -339,6 +355,7 @@ class Home extends BaseController
             'posts'       => $contents['posts'],
             'tags'        => $contents['tags'],
             'media'       => $contents['media'],
+            'authors'     => $contents['authors'],
             'q'           => null,
             'pg'          => $page,
             'tag'         => $tag_slug,
@@ -379,6 +396,12 @@ class Home extends BaseController
                 $seo_image = $raw_media['body']['media_details']['sizes']['medium']['source_url'];
             }
         }
+        $user_url  = $config['blog_url'] . 'users/' . $post_data['author'];
+        $raw_user  = $this->callCurl($user_url);
+        $user_name = lang('Theme.author');
+        if (!empty($raw_user['body'])) {
+            $user_name = $raw_user['body']['name'];
+        }
         $data = [
             'page'            => $post_title . ' - ' . lang('Theme.navigations.blog'),
             'handle'          => 'blog',
@@ -388,7 +411,8 @@ class Home extends BaseController
             'post'            => $post_data,
             'tags'            => $tags,
             'seo_description' => strip_tags($post_data['excerpt']['rendered']),
-            'seo_image'       => $seo_image
+            'seo_image'       => $seo_image,
+            'user_name'       => $user_name,
         ];
         return view('blog_view', $data);
     }

@@ -24,22 +24,23 @@ $this->section('content');
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
                 <div class="col-md-10 col-lg-8">
-                    <div><i class="fa-solid fa-calendar-days"></i> <?= date('d M Y', strtotime(substr($post['date'], 0, 10))) ?></div>
-                    <article class="my-5 blog-article">
-                        <?= $post['content']['rendered'] ?>
-                    </article>
-                    <?php if (!empty($tags)) : ?>
-                        <div>
-                            <i class="fa-solid fa-tags"></i>
+                    <div>
+                        <i class="fa-solid fa-calendar-days"></i> <?= date('d M Y', strtotime(substr($post['date'], 0, 10))) ?>
+                        &nbsp; &nbsp; <i class="fa-solid fa-user"></i> <?= $user_name ?>
+                        <?php if (!empty($tags)) : ?>
+                            &nbsp; &nbsp; <i class="fa-solid fa-tags"></i>
                             <?php foreach ($tags as $id => $name) : ?>
                                 <a href="<?= base_url($locale . '/blog/tag/' . $id) ?>" class="badge bg-warning"><?= $name ?></a>
                             <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
+                    <article class="my-5 blog-article">
+                        <?= $post['content']['rendered'] ?>
+                    </article>
                 </div>
-                <pre>
-                    <?php print_r($post) ?>
-                </pre>
+<!--                <pre>-->
+<!--                    --><?php //print_r($post) ?>
+<!--                </pre>-->
             </div>
         </div>
     </section>
