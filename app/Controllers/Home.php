@@ -360,13 +360,25 @@ class Home extends BaseController
         $response   = $this->callCurl($url);
         $post_data  = $response['body'];
         $post_title = $post_data['title']['rendered'];
+        $tag_ids    = $post_data['tags'];
+        $tags       = [];
+        if (!empty($tag_ids)) {
+            $tag_url  = $config['blog_url'] . 'tags?include=' . implode(',', $tag_ids);
+            $raw_tags = $this->callCurl($tag_url);
+            if (!empty($raw_tags['body']) && is_array($raw_tags['body'])) {
+                foreach ($raw_tags['body'] as $tag) {
+                    $tags[$tag['id']] = $tag['name'];
+                }
+            }
+        }
         $data       = [
             'page'    => $post_title . ' - ' . lang('Theme.navigations.blog'),
             'handle'  => 'blog',
             'mode'    => 'view',
             'locale'  => $locale,
             'title'   => $post_title,
-            'post'    => $post_data
+            'post'    => $post_data,
+            'tags'    => $tags,
         ];
         return view('blog_read', $data);
     }

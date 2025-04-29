@@ -13,6 +13,7 @@ $this->section('content');
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <form action="<?= base_url($locale . '/blog/search') ?>" method="get">
                 <div class="row gy-4">
+                    <div class="d-none d-md-block col-md-6 col-lg-8">&nbsp;</div>
                     <div class="col-md-6 col-lg-4 mb-3">
                         <div class="input-group float-end">
                             <label for="search" class="d-none"><?= lang('Blog.search') ?></label>

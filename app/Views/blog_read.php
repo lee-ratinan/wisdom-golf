@@ -11,7 +11,8 @@ $this->section('content');
                         <i class="fa-solid fa-chevron-right"></i>
                         <a href="<?= base_url($locale . '/blog') ?>"><?= lang('Theme.navigations.blog') ?></a>
                         <i class="fa-solid fa-chevron-right"></i>
-                        <span id="this-blog-title"><?= $title ?></span></p>
+                        <span id="this-blog-title"><?= $title ?></span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -24,12 +25,17 @@ $this->section('content');
             <div class="row gy-4">
                 <div class="col-md-10 col-lg-8">
                     <div><i class="fa-solid fa-calendar-days"></i> <?= date('d M Y', strtotime(substr($post['date'], 0, 10))) ?></div>
-                    <article class="my-5">
+                    <article class="my-5 blog-article">
                         <?= $post['content']['rendered'] ?>
                     </article>
-<!--                    <pre>-->
-<!--                        --><?php //= print_r($post) ?>
-<!--                    </pre>-->
+                    <?php if (!empty($tags)) : ?>
+                        <div>
+                            <i class="fa-solid fa-tags"></i>
+                            <?php foreach ($tags as $id => $name) : ?>
+                                <a href="<?= base_url($locale . '/blog/tag/' . $id) ?>" class="badge bg-warning"><?= $name ?></a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

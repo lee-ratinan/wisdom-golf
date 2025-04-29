@@ -1945,3 +1945,8 @@ section,
 .blog-excerpt p {
   margin-bottom: 0;
 }
+.blog-article img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
