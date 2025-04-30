@@ -26,9 +26,9 @@ $this->section('content');
                 <div class="col-md-10 col-lg-8">
                     <div>
                         <i class="fa-solid fa-calendar-days"></i> <?= date('d M Y', strtotime(substr($post['date'], 0, 10))) ?>
-                        &nbsp; &nbsp; <i class="fa-solid fa-user"></i> <?= $user_name ?>
+                        <i class="fa-solid fa-user ms-3"></i> <?= $user_name ?>
                         <?php if (!empty($tags)) : ?>
-                            &nbsp; &nbsp; <i class="fa-solid fa-tags"></i>
+                            <i class="fa-solid fa-tags ms-3"></i>
                             <?php foreach ($tags as $id => $name) : ?>
                                 <a href="<?= base_url($locale . '/blog/tag/' . $id) ?>" class="badge bg-warning"><?= $name ?></a>
                             <?php endforeach; ?>
@@ -38,9 +38,6 @@ $this->section('content');
                         <?= $post['content']['rendered'] ?>
                     </article>
                 </div>
-<!--                <pre>-->
-<!--                    --><?php //print_r($post) ?>
-<!--                </pre>-->
             </div>
         </div>
     </section>

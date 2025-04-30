@@ -24,18 +24,18 @@ $this->section('content');
                 </div>
             </form>
             <div class="row gy-4">
-                <div class="col">
+                <div class="col-md-10 col-lg-8">
                     <p>
                         <?= lang('Blog.showing', [$pg, $total_pages]) ?>
                         <?php if (!empty($q)) : ?>
-                            <?= lang('Blog.search_result', [$q]) ?>
+                            <?= lang('Blog.search-result', [$q]) ?>
                         <?php endif; ?>
                         <?php if (!empty($tag)) : ?>
-                            <?= lang('Blog.tag_filter', [$tag]) ?>
+                            <?= lang('Blog.tag-filter', [$tag]) ?>
                         <?php endif; ?>
-                        <?= lang('Blog.total_posts', [$total_posts]) ?>
+                        <?= lang('Blog.total-posts', [$total_posts]) ?>
                         <?php if (!empty($q) || !empty($tag)) : ?>
-                            | <a href="<?= base_url($locale . '/blog') ?>"><?= lang('Blog.clear_filter') ?></a>
+                            | <a href="<?= base_url($locale . '/blog') ?>"><?= lang('Blog.clear-filter') ?></a>
                         <?php endif; ?>
                     </p>
                     <?php if (empty($posts)) : ?>
@@ -44,27 +44,26 @@ $this->section('content');
                         </div>
                     <?php else : ?>
                         <?php foreach ($posts as $post) : ?>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h2 class="card-title"><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h2>
-                                <?php if (0 < $post['media_id'] && isset($media[$post['media_id']])) : ?>
+                        <div class="mb-3">
+                            <h2 class="mb-3"><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h2>
+                            <div>
+                                <i class="fa-solid fa-calendar-days"></i> <?= $post['date'] ?>
+                                <i class="fa-solid fa-user ms-3"></i> <?= $authors[$post['author']] ?>
+                                <?php if (!empty($post['tag_ids'])) : ?>
+                                    <i class="fa-solid fa-tags ms-3"></i>
+                                    <?php foreach ($post['tag_ids'] as $tag_id) : ?>
+                                        <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= $tags[$tag_id] ?></a>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                            <?php if (0 < $post['media_id'] && isset($media[$post['media_id']])) : ?>
                                 <div class="float-end ms-3">
                                     <a href="<?= $post['url'] ?>"><img src="<?= $media[$post['media_id']] ?>" alt="<?= $post['title'] ?>" class="img-fluid img-thumbnail" /></a>
                                 </div>
-                                <?php endif; ?>
-                                <div>
-                                    <i class="fa-solid fa-calendar-days"></i> <?= $post['date'] ?>
-                                    &nbsp; &nbsp; <i class="fa-solid fa-user"></i> <?= $authors[$post['author']] ?>
-                                    <?php if (!empty($post['tag_ids'])) : ?>
-                                        &nbsp; &nbsp; <i class="fa-solid fa-tags"></i>
-                                        <?php foreach ($post['tag_ids'] as $tag_id) : ?>
-                                            <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= $tags[$tag_id] ?></a>
-                                        <?php endforeach; ?>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="blog-excerpt my-2"><?= $post['excerpt'] ?></div>
-                                <div class="my-2"><a href="<?= $post['url'] ?>"><?= lang('Blog.read-more') ?></a></div>
-                            </div>
+                            <?php endif; ?>
+                            <div class="blog-excerpt my-2"><?= $post['excerpt'] ?></div>
+                            <div class="my-2"><a href="<?= $post['url'] ?>"><?= lang('Blog.read-more') ?></a></div>
+                            <hr class="my-5" />
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
