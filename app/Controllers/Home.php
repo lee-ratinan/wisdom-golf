@@ -31,6 +31,18 @@ class Home extends BaseController
     }
 
     /**
+     * Strip tags and remove [...] from the excerpt
+     * Please note that the word count is set at WordPress, theme's file, functions.php
+     * @param string $excerpt
+     * @return string
+     */
+    private function fixExcerpt(string $excerpt): string
+    {
+        $excerpt = strip_tags($excerpt);
+        return trim(str_replace('[&hellip;]', '', $excerpt));
+    }
+
+    /**
      * Call cURL
      * @param string $url
      * @param string $method
@@ -83,12 +95,12 @@ class Home extends BaseController
             foreach ($posts as $post) {
                 $array_posts[] = [
                     'url'      => base_url($locale . '/blog/view/' . $post['id']),
-                    'title'    => @$post['title']['rendered'],
-                    'author'   => @$post['author'],
+                    'title'    => $post['title']['rendered'],
+                    'author'   => $post['author'],
                     'date'     => date('d M Y', strtotime(substr(@$post['date'], 0, 10))),
-                    'excerpt'  => @$post['excerpt']['rendered'],
-                    'tag_ids'  => @$post['tags'],
-                    'media_id' => @$post['featured_media']
+                    'excerpt'  => $this->fixExcerpt($post['excerpt']['rendered']),
+                    'tag_ids'  => $post['tags'],
+                    'media_id' => $post['featured_media']
                 ];
                 if (!empty($post['tags'])) {
                     foreach ($post['tags'] as $tag) {
@@ -410,7 +422,7 @@ class Home extends BaseController
             'title'           => $post_title,
             'post'            => $post_data,
             'tags'            => $tags,
-            'seo_description' => strip_tags($post_data['excerpt']['rendered']),
+            'seo_description' => $this->fixExcerpt($post_data['excerpt']['rendered']),
             'seo_image'       => $seo_image,
             'user_name'       => $user_name,
         ];
