@@ -73,17 +73,17 @@ $this->section('content');
                 <div class="col text-center">
                     <!-- PREV -->
                     <?php if (1 == $pg) : ?>
-                        <?= lang('blog.previous') ?>
+                        <?= lang('Blog.previous') ?>
                     <?php else : ?>
-                        <a href="?page=<?= $pg - 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('blog.previous') ?></a>
+                        <a href="?page=<?= $pg - 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('Blog.previous') ?></a>
                     <?php endif; ?>
                     <!-- CURRENT PAGE -->
                     | <?= lang('Blog.page', [$pg]) ?> |
                     <!-- NEXT -->
                     <?php if ($total_pages >= $pg + 1) : ?>
-                        <a href="?page=<?= $pg + 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('blog.next') ?></a>
+                        <a href="?page=<?= $pg + 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('Blog.next') ?></a>
                     <?php else: ?>
-                        <?= lang('blog.next') ?>
+                        <?= lang('Blog.next') ?>
                     <?php endif; ?>
                 </div>
             </div>
