@@ -8,13 +8,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $page ?> - <?= lang('Theme.title') ?></title>
-    <meta name="description" content="<?= lang('Seo.' . $handle . '.description') ?>">
+    <meta name="description" content="<?= (empty($seo_description) ? lang('Seo.' . $handle . '.description') : $seo_description) ?>">
     <meta name="keywords" content="<?= lang('Seo.all-pages.keywords') ?>, <?= lang('Seo.' . $handle . '.keywords') ?>">
     <meta name="author" content="<?= lang('Theme.author') ?>">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="<?= $page ?> - <?= lang('Theme.title') ?>">
-    <meta property="og:description" content="<?= lang('Seo.' . $handle . '.description') ?>">
-    <meta property="og:image" content="<?= base_url('img/home-intro.jpg') ?>">
+    <meta property="og:description" content="<?= (empty($seo_description) ? lang('Seo.' . $handle . '.description') : $seo_description) ?>">
+    <meta property="og:image" content="<?= (empty($seo_image) ? base_url('img/home-intro.jpg') : $seo_image) ?>">
     <meta property="og:url" content="<?= base_url($locale_nav . $handle_nav) ?>">
     <!-- Favicons -->
     <link href="<?= base_url('img/favicon-180.png') ?>" rel="icon">
@@ -105,6 +105,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'q-and-a') ?>"><?= lang('Theme.navigations.q-and-a') ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
+                <li class="nav-item d-none"><a class="nav-link" href="<?= base_url($locale_nav . 'blog') ?>"><?= lang('Theme.navigations.blog') ?></a></li>
             </ul>
             <div class="d-none d-lg-flex gap-2 change-language-buttons">
                 <a href="<?= base_url('en/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-us-rec.svg') ?>" alt="English" title="English" class="language-flag flag-nav"></a>
@@ -176,14 +177,23 @@
             </div>
             <div class="col-md-6 footer-links pt-5">
                 <h3><?= lang('Theme.footer.useful_links') ?></h3>
-                <ul>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav) ?>"><?= lang('Theme.navigations.home') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/instructors') ?>"><?= lang('Theme.navigations.instructors') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/reviews') ?>"><?= lang('Theme.navigations.reviews') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/q-and-a') ?>"><?= lang('Theme.navigations.q-and-a') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
-                    <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
-                </ul>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul>
+                            <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav) ?>"><?= lang('Theme.navigations.home') ?></a></li>
+                            <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/instructors') ?>"><?= lang('Theme.navigations.instructors') ?></a></li>
+                            <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/reviews') ?>"><?= lang('Theme.navigations.reviews') ?></a></li>
+                            <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/q-and-a') ?>"><?= lang('Theme.navigations.q-and-a') ?></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
+                            <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
+                            <li class="d-none"><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/blog') ?>"><?= lang('Theme.navigations.blog') ?></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
