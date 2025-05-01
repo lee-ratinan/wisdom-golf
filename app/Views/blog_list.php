@@ -28,10 +28,10 @@ $this->section('content');
                     <p>
                         <?= lang('Blog.showing', [$pg, $total_pages]) ?>
                         <?php if (!empty($q)) : ?>
-                            <?= lang('Blog.search-result', [$q]) ?>
+                            <?= lang('Blog.search-result', [urldecode($q)]) ?>
                         <?php endif; ?>
                         <?php if (!empty($tag)) : ?>
-                            <?= lang('Blog.tag-filter', [$tag]) ?>
+                            <?= lang('Blog.tag-filter', [urldecode($tag)]) ?>
                         <?php endif; ?>
                         <?= lang('Blog.total-posts', [$total_posts]) ?>
                         <?php if (!empty($q) || !empty($tag)) : ?>
@@ -52,7 +52,7 @@ $this->section('content');
                                 <?php if (!empty($post['tag_ids'])) : ?>
                                     <i class="fa-solid fa-tags ms-3"></i>
                                     <?php foreach ($post['tag_ids'] as $tag_id) : ?>
-                                        <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= $tags[$tag_id] ?></a>
+                                        <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= urldecode($tags[$tag_id]) ?></a>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </p>

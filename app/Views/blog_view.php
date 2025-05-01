@@ -30,7 +30,7 @@ $this->section('content');
                         <?php if (!empty($tags)) : ?>
                             <i class="fa-solid fa-tags ms-3"></i>
                             <?php foreach ($tags as $id => $name) : ?>
-                                <a href="<?= base_url($locale . '/blog/tag/' . $id) ?>" class="badge bg-warning"><?= $name ?></a>
+                                <a href="<?= base_url($locale . '/blog/tag/' . $id) ?>" class="badge bg-warning"><?= urldecode($name) ?></a>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
