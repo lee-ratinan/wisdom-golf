@@ -63,7 +63,7 @@ $this->section('content');
                             <?php endif; ?>
                             <div class="blog-excerpt my-2"><?= $post['excerpt'] ?></div>
                             <div class="my-2"><a href="<?= $post['url'] ?>"><?= lang('Blog.read-more') ?></a></div>
-                            <hr class="my-5 clearfix" />
+                            <hr class="clearfix my-5" />
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
