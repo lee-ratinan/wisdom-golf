@@ -46,7 +46,7 @@ $this->section('content');
                         <?php foreach ($posts as $post) : ?>
                         <div class="mb-3">
                             <h2 class="mb-3"><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h2>
-                            <div>
+                            <p>
                                 <i class="fa-solid fa-calendar-days"></i> <?= $post['date'] ?>
                                 <i class="fa-solid fa-user ms-3"></i> <?= $authors[$post['author']] ?>
                                 <?php if (!empty($post['tag_ids'])) : ?>
@@ -55,7 +55,7 @@ $this->section('content');
                                         <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= $tags[$tag_id] ?></a>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
-                            </div>
+                            </p>
                             <?php if (0 < $post['media_id'] && isset($media[$post['media_id']])) : ?>
                                 <div class="float-end ms-3">
                                     <a href="<?= $post['url'] ?>"><img src="<?= $media[$post['media_id']] ?>" alt="<?= $post['title'] ?>" class="img-fluid img-thumbnail" /></a>
@@ -63,7 +63,7 @@ $this->section('content');
                             <?php endif; ?>
                             <div class="blog-excerpt my-2"><?= $post['excerpt'] ?></div>
                             <div class="my-2"><a href="<?= $post['url'] ?>"><?= lang('Blog.read-more') ?></a></div>
-                            <hr class="my-5" />
+                            <hr class="my-5 clearfix" />
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
@@ -73,17 +73,17 @@ $this->section('content');
                 <div class="col text-center">
                     <!-- PREV -->
                     <?php if (1 == $pg) : ?>
-                        <?= lang('blog.previous') ?>
+                        <?= lang('Blog.previous') ?>
                     <?php else : ?>
-                        <a href="?page=<?= $pg - 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('blog.previous') ?></a>
+                        <a href="?page=<?= $pg - 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('Blog.previous') ?></a>
                     <?php endif; ?>
                     <!-- CURRENT PAGE -->
                     | <?= lang('Blog.page', [$pg]) ?> |
                     <!-- NEXT -->
                     <?php if ($total_pages >= $pg + 1) : ?>
-                        <a href="?page=<?= $pg + 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('blog.next') ?></a>
+                        <a href="?page=<?= $pg + 1 ?>&q=<?= $q ?>&tag=<?= $tag ?>"><?= lang('Blog.next') ?></a>
                     <?php else: ?>
-                        <?= lang('blog.next') ?>
+                        <?= lang('Blog.next') ?>
                     <?php endif; ?>
                 </div>
             </div>
