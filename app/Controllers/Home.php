@@ -31,6 +31,28 @@ class Home extends BaseController
     }
 
     /**
+     * Format the date in the selected locale format
+     * @param string $locale
+     * @param string $date
+     * @return string
+     */
+    private function formatDate(string $locale, string $date): string
+    {
+        $date = substr($date, 0, 10);
+        if ('th' == $locale) {
+            $months_in_thai = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+            $time  = strtotime($date);
+            $date  = date('j', $time);
+            $month = intval(date('m', $time))-1;
+            $year  = intval(date('Y', $time))+543;
+            return $date . ' ' . $months_in_thai[$month] . ' ' . $year;
+        } else if ('ja' == $locale) {
+            return date('Y年m月d日', strtotime($date));;
+        }
+        return date('d M Y', strtotime($date));
+    }
+
+    /**
      * Strip tags and remove [...] from the excerpt
      * Please note that the word count is set at WordPress, theme's file, functions.php
      * @param string $excerpt
@@ -97,7 +119,7 @@ class Home extends BaseController
                     'url'      => base_url($locale . '/blog/view/' . $post['id']),
                     'title'    => $post['title']['rendered'],
                     'author'   => $post['author'],
-                    'date'     => date('d M Y', strtotime(substr(@$post['date'], 0, 10))),
+                    'date'     => $this->formatDate($locale, $post['date']),
                     'excerpt'  => $this->fixExcerpt($post['excerpt']['rendered']),
                     'tag_ids'  => $post['tags'],
                     'media_id' => $post['featured_media']
@@ -419,6 +441,7 @@ class Home extends BaseController
             'page'            => $post_title . ' - ' . lang('Theme.navigations.blog'),
             'handle'          => 'blog',
             'mode'            => 'view',
+            'date'            => $this->formatDate($locale, $post_data['date']),
             'locale'          => $locale,
             'title'           => $post_title,
             'post'            => $post_data,

@@ -25,7 +25,7 @@ $this->section('content');
             <div class="row gy-4">
                 <div class="col-md-10 col-lg-8">
                     <div>
-                        <i class="fa-solid fa-calendar-days"></i> <?= date('d M Y', strtotime(substr($post['date'], 0, 10))) ?>
+                        <i class="fa-solid fa-calendar-days"></i> <?= $date ?>
                         <i class="fa-solid fa-user ms-3"></i> <?= $user_name ?>
                         <?php if (!empty($tags)) : ?>
                             <i class="fa-solid fa-tags ms-3"></i>
