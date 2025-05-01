@@ -716,10 +716,6 @@ h6 {
   align-items: center;
 }
 
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
 .footer .footer-links ul a {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   display: inline-block;

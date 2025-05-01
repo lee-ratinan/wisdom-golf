@@ -11,7 +11,7 @@ return [
         'packages'    => 'ราคา',
         'line'        => 'ไลน์',
         'languages'   => 'เปลี่ยนภาษา',
-        'blog'        => 'บทความ'
+        'blog'        => 'บล็อก'
     ],
     'languages'   => [
         'th' => 'ภาษาไทย',

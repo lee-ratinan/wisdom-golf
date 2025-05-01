@@ -378,6 +378,7 @@ class Home extends BaseController
     }
 
     /**
+     * View the blog post itself
      * @param int $id
      * @return string
      */

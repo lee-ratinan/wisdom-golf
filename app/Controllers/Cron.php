@@ -81,7 +81,7 @@ class Cron extends BaseController
         }
         $final_xml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' . PHP_EOL;
         foreach ($xml as $item) {
-            $final_xml .= '<url>';
+            $final_xml .= '<url>' . PHP_EOL;
             foreach ($item as $key => $value) {
                 $final_xml .= '<' . $key . '>' . $value . '</' . $key . '>' . PHP_EOL;
             }
