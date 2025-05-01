@@ -30,3 +30,5 @@ $routes->get('{locale}', 'Home::index');
 $routes->get('/', 'Home::index');
 // SCRIPT
 $routes->post('form-submission', 'Home::formSubmission');
+// CRON
+$routes->get('cron/weekly', 'Cron::weekly');
