@@ -13,14 +13,14 @@ $this->section('content');
     <section class="packages section pt-0">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <img src="<?= base_url('img/package-adult.jpg') ?>" class="img-fluid" alt="Wisdom Golf Academy <?= lang('Packages.adult') ?>" />
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <img src="<?= base_url('img/package-junior.jpg') ?>" class="img-fluid" alt="Wisdom Golf Academy <?= lang('Packages.junior') ?>" />
