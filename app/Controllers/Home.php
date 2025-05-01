@@ -428,7 +428,10 @@ class Home extends BaseController
             $media_url = $config['blog_url'] . 'media/' . $post_data['featured_media'];
             $raw_media = $this->callCurl($media_url);
             if (!empty($raw_media['body'])) {
-                $seo_image = $raw_media['body']['media_details']['sizes']['medium']['source_url'];
+                $seo_image = $raw_media['body']['media_details']['sizes']['medium']['source_url'] ?? $raw_media['body']['media_details']['sizes']['thumbnail']['source_url'];
+                if (empty($seo_image)) {
+                    $seo_image = null;
+                }
             }
         }
         $user_url  = $config['blog_url'] . 'users/' . $post_data['author'];
