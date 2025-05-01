@@ -57,7 +57,7 @@ $this->section('content');
                                 <?php endif; ?>
                             </p>
                             <?php if (0 < $post['media_id'] && isset($media[$post['media_id']])) : ?>
-                                <div class="float-end ms-3">
+                                <div class="float-end ms-3 mb-3">
                                     <a href="<?= $post['url'] ?>"><img src="<?= $media[$post['media_id']] ?>" alt="<?= $post['title'] ?>" class="img-fluid img-thumbnail" /></a>
                                 </div>
                             <?php endif; ?>
