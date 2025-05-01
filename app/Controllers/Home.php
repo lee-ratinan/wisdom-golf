@@ -84,6 +84,10 @@ class Home extends BaseController
             $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
             $headers    = substr($response, 0, $headerSize);
             $body       = substr($response, $headerSize);
+            log_message('debug', '=== cURL response ===');
+            log_message('debug', $headers);
+            log_message('debug', $body);
+            log_message('debug', '=== cURL response end ===');
             curl_close($ch);
             return [
                 'headers' => $headers,
