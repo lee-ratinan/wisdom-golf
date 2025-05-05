@@ -151,7 +151,7 @@ class Home extends BaseController
                 $response  = $this->callCurl($config['blog_url'] . 'media?include=' . implode(',', $media));
                 $raw_media = $response['body'];
                 foreach ($raw_media as $media_item) {
-                    $media_list[$media_item['id']] = (!empty($media_item['media_details']['sizes']['medium']['source_url']) ? $media_item['media_details']['sizes']['medium']['source_url'] : $media_item['media_details']['sizes']['thumbnail']['source_url']);
+                    $media_list[$media_item['id']] = $media_item['media_details']['sizes']['thumbnail']['source_url'];
                 }
             }
             // AUTHORS
