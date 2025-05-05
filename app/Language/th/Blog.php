@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'         => 'บล็อก',
+    'title'         => 'Blog',
     'loading'       => 'กำลังโหลด...',
     'read-more'     => 'อ่านต่อ',
     'search'        => 'ค้นหา',
