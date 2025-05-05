@@ -16,6 +16,7 @@
     <meta property="og:description" content="<?= (empty($seo_description) ? lang('Seo.' . $handle . '.description') : $seo_description) ?>">
     <meta property="og:image" content="<?= (empty($seo_image) ? base_url('img/home-intro.jpg') : $seo_image) ?>">
     <meta property="og:url" content="<?= base_url($locale_nav . $handle_nav) ?>">
+    <meta property="og:type" content="<?= ('blog' == $handle ? 'article' : 'website') ?>" />
     <!-- Favicons -->
     <link href="<?= base_url('img/favicon-180.png') ?>" rel="icon">
     <link href="<?= base_url('img/favicon-192.png') ?>" rel="apple-touch-icon">
