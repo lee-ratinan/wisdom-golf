@@ -116,7 +116,7 @@ class Home extends BaseController
             $authors = [];
             foreach ($posts as $post) {
                 $array_posts[] = [
-                    'url'      => base_url($locale . '/blog/view/' . $post['id']),
+                    'url'      => base_url($locale . '/blog/view/' . $post['id'] . '#' . urldecode($post['slug'])),
                     'title'    => $post['title']['rendered'],
                     'author'   => $post['author'],
                     'date'     => $this->formatDate($locale, $post['date']),
@@ -151,7 +151,7 @@ class Home extends BaseController
                 $response  = $this->callCurl($config['blog_url'] . 'media?include=' . implode(',', $media));
                 $raw_media = $response['body'];
                 foreach ($raw_media as $media_item) {
-                    $media_list[$media_item['id']] = $media_item['media_details']['sizes']['thumbnail']['source_url'];
+                    $media_list[$media_item['id']] = (!empty($media_item['media_details']['sizes']['medium']['source_url']) ? $media_item['media_details']['sizes']['medium']['source_url'] : $media_item['media_details']['sizes']['thumbnail']['source_url']);
                 }
             }
             // AUTHORS
