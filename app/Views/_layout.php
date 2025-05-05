@@ -15,7 +15,7 @@
     <meta property="og:title" content="<?= $page ?> - <?= lang('Theme.title') ?>">
     <meta property="og:description" content="<?= (empty($seo_description) ? lang('Seo.' . $handle . '.description') : $seo_description) ?>">
     <meta property="og:image" content="<?= (empty($seo_image) ? base_url('img/home-intro.jpg') : $seo_image) ?>">
-    <meta property="og:url" content="<?= base_url($locale_nav . $handle_nav) ?>">
+    <meta property="og:url" content="<?= (isset($url) ? $url : base_url($locale_nav . $handle_nav)) ?>">
     <meta property="og:type" content="<?= ('blog' == $handle ? 'article' : 'website') ?>" />
     <!-- Favicons -->
     <link href="<?= base_url('img/favicon-180.png') ?>" rel="icon">
@@ -37,11 +37,16 @@
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.min.css') ?>" rel="stylesheet">
     <!-- Link Languages -->
+    <?php if (isset($url)) : ?>
+    <link rel="alternate" hreflang="x-default" href="<?= $url ?>"> 
+    <link rel="canonical" href="<?= $url ?>">
+    <?php else: ?>
     <link rel="alternate" hreflang="en" href="<?= base_url('en/' . $handle_nav) ?>">
     <link rel="alternate" hreflang="th" href="<?= base_url('th/' . $handle_nav) ?>">
     <link rel="alternate" hreflang="ja" href="<?= base_url('ja/' . $handle_nav) ?>">
     <link rel="alternate" hreflang="x-default" href="<?= base_url($handle_nav) ?>">
     <link rel="canonical" href="<?= base_url($handle_nav) ?>">
+    <?php endif; ?>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16951874499"></script>
     <script>
