@@ -105,7 +105,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'q-and-a') ?>"><?= lang('Theme.navigations.q-and-a') ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
-                <li class="nav-item d-none"><a class="nav-link" href="<?= base_url($locale_nav . 'blog') ?>"><?= lang('Theme.navigations.blog') ?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url($locale_nav . 'blog') ?>"><?= lang('Theme.navigations.blog') ?></a></li>
             </ul>
             <div class="d-none d-lg-flex gap-2 change-language-buttons">
                 <a href="<?= base_url('en/' . $handle_nav) ?>"><img src="<?= base_url('img/flag-us-rec.svg') ?>" alt="English" title="English" class="language-flag flag-nav"></a>
@@ -190,7 +190,7 @@
                         <ul>
                             <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/packages') ?>"><?= lang('Theme.navigations.packages') ?></a></li>
                             <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/contact') ?>"><?= lang('Theme.navigations.contact') ?></a></li>
-                            <li class="d-none"><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/blog') ?>"><?= lang('Theme.navigations.blog') ?></a></li>
+                            <li><i class="fa-solid fa-chevron-right me-2"></i> <a href="<?= base_url($locale_nav . '/blog') ?>"><?= lang('Theme.navigations.blog') ?></a></li>
                         </ul>
                     </div>
                 </div>
