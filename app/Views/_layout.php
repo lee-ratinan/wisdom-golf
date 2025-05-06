@@ -48,9 +48,9 @@
     <link rel="canonical" href="<?= base_url($handle_nav) ?>">
     <?php endif; ?>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16951874499"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= getenv('ANALYTICS_ID') ?>"></script>
     <script>
-	window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-16951874499');
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '<?= getenv('ANALYTICS_ID') ?>'); gtag('config', '<?= getenv('AW_ID') ?>');
     </script>
     <?php $fonts = ('th' == $locale ? 'Noto Sans Thai' : ('ja' == $locale ? 'Noto Sans JP' : '')); ?>
     <?php if (!empty($fonts)): ?><style>body,h1,h2,h3,h4,p,span,.navmenu a, .navmenu a:focus {font-family: '<?= $fonts ?>', sans-serif !important;}</style><?php endif; ?>

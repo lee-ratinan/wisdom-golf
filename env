@@ -20,7 +20,7 @@ CI_ENVIRONMENT=production
 # APP
 #--------------------------------------------------------------------
 
-app.baseURL=http://127.0.0.1:8888/wisdom-golf/public/
+app.baseURL=https://wisdomgolfacademy.com/
 
 #--------------------------------------------------------------------
 # DATABASE
@@ -62,7 +62,7 @@ app.baseURL=http://127.0.0.1:8888/wisdom-golf/public/
 # LOGGER
 #--------------------------------------------------------------------
 
-logger.threshold=4
+logger.threshold=5
 
 ## CONTACT INFO
 CONTACT_LINE=https://lin.ee/rn94ZqL
@@ -74,9 +74,17 @@ SOCIAL_INSTAGRAM=https://www.instagram.com/wisdom.golfacademy/
 SOCIAL_TIKTOK=https://www.tiktok.com/@wisdomgolfacademy
 SOCIAL_YOUTUBE=https://www.youtube.com/@WisdomGolfAcademy
 
+
 # ANALYTICS
 ANALYTICS_ID=G-2RP837Q2B7
+AW_ID=AW-16951874499
 
 # CONTACT FORM EMAIL ADDRESS
 CONTACT_FORM_FROM=no-reply@wisdomgolfacademy.com
 CONTACT_FORM_EMAIL=wisdomgolfacademy@gmail.com
+
+# BLOG
+BLOG_URL=https://blog.wisdomgolfacademy.com/wp-json/wp/v2/
+BLOG_EN_ID=3
+BLOG_TH_ID=2
+BLOG_JA_ID=4
