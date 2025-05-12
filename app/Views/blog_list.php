@@ -2,6 +2,12 @@
 $this->extend('_layout.php');
 $this->section('content');
 ?>
+    <style>
+        .img-blog-thumbnail {width:200px;}
+        @media (max-width: 768px) {
+            .img-blog-thumbnail {width:150px;}
+        }
+    </style>
     <h1 class="d-none"><?= lang('Theme.navigations.blog') ?> - <?= lang('Seo.all-pages.keywords') ?></h1>
     <!-- Contact Section -->
     <section id="blog" class="blog section pt-0">
@@ -58,7 +64,7 @@ $this->section('content');
                             </p>
                             <?php if (0 < $post['media_id'] && isset($media[$post['media_id']])) : ?>
                                 <div class="float-end ms-3 mb-3">
-                                    <a href="<?= $post['url'] ?>"><img src="<?= $media[$post['media_id']] ?>" alt="<?= $post['title'] ?>" class="img-fluid img-thumbnail" /></a>
+                                    <a href="<?= $post['url'] ?>"><img src="<?= $media[$post['media_id']] ?>" alt="<?= $post['title'] ?>" class="img-fluid img-thumbnail img-blog-thumbnail" /></a>
                                 </div>
                             <?php endif; ?>
                             <div class="blog-excerpt my-2"><?= $post['excerpt'] ?></div>
