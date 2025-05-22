@@ -2,14 +2,16 @@
 
 namespace App\Controllers;
 
-class Cron extends BaseController
+use CodeIgniter\HTTP\ResponseInterface;
+
+class Sitemap extends BaseController
 {
 
     /**
      * Generate Sitemap.xml
-     * @return void
+     * @return ResponseInterface
      */
-    private function generateSitemap(): void
+    public function index(): ResponseInterface
     {
         // MAIN PAGES
         $main_pages = [
@@ -79,25 +81,16 @@ class Cron extends BaseController
                 continue;
             }
         }
-        $final_xml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' . PHP_EOL;
+        $final_xml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">';
         foreach ($xml as $item) {
-            $final_xml .= '<url>' . PHP_EOL;
+            $final_xml .= '<url>';
             foreach ($item as $key => $value) {
-                $final_xml .= '<' . $key . '>' . $value . '</' . $key . '>' . PHP_EOL;
+                $final_xml .= '<' . $key . '>' . $value . '</' . $key . '>';
             }
-            $final_xml .= '</url>' . PHP_EOL;
+            $final_xml .= '</url>';
         }
         $final_xml .= '</urlset>';
-        $path       = str_replace('writable', 'public', WRITEPATH . 'sitemap.xml');
-        file_put_contents($path, $final_xml);
+        return $this->response->setXML($final_xml);
     }
 
-    /**
-     * Cronjob to run weekly
-     * @return void
-     */
-    public function weekly(): void
-    {
-        $this->generateSitemap();
-    }
 }

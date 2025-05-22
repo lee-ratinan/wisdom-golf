@@ -15,6 +15,8 @@ $routes->get('blog/view/(:num)', 'Home::blog_view/$1');
 $routes->get('blog/tag/(:num)', 'Home::blog_tag/$1');
 $routes->get('blog/search', 'Home::blog_search');
 $routes->get('blog', 'Home::blog');
+// SITEMAP.XML
+$routes->get('sitemap.xml', 'Sitemap::index');
 // WITH LOCALE
 $routes->get('{locale}/reviews', 'Home::reviews');
 $routes->get('{locale}/instructors', 'Home::instructors');
@@ -30,5 +32,3 @@ $routes->get('{locale}', 'Home::index');
 $routes->get('/', 'Home::index');
 // SCRIPT
 $routes->post('form-submission', 'Home::formSubmission');
-// CRON
-$routes->get('cron/weekly', 'Cron::weekly');
