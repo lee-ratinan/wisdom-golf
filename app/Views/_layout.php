@@ -45,7 +45,7 @@
     <link rel="alternate" hreflang="th" href="<?= base_url('th/' . $handle_nav) ?>">
     <link rel="alternate" hreflang="ja" href="<?= base_url('ja/' . $handle_nav) ?>">
     <link rel="alternate" hreflang="x-default" href="<?= base_url($handle_nav) ?>">
-    <link rel="canonical" href="<?= base_url($handle_nav) ?>">
+    <link rel="canonical" href="<?= str_replace('index.php/', '', current_url()) ?>">
     <?php endif; ?>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=<?= getenv('ANALYTICS_ID') ?>"></script>
