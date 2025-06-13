@@ -58,7 +58,9 @@ $this->section('content');
                                 <?php if (!empty($post['tag_ids'])) : ?>
                                     <i class="fa-solid fa-tags ms-3"></i>
                                     <?php foreach ($post['tag_ids'] as $tag_id) : ?>
-                                        <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= urldecode($tags[$tag_id]) ?></a>
+                                        <?php if (isset($tags[$tag_id])) : ?>
+                                            <a href="<?= base_url($locale . '/blog/tag/' . $tag_id) ?>" class="badge bg-warning"><?= urldecode($tags[$tag_id]) ?></a>
+                                        <?php endif; ?>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </p>
