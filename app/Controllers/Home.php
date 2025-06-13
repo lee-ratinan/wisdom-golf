@@ -140,10 +140,19 @@ class Home extends BaseController
             $config  = $this->getBlogConfig($locale);
             // TAGS
             if (!empty($tags)) {
-                $response = $this->callCurl($config['blog_url'] . 'tags?per_page=50&include=' . implode(',', $tags));
-                $raw_tags = $response['body'];
-                foreach ($raw_tags as $tag) {
-                    $tag_list[$tag['id']] = $tag['slug'];
+                $tag_count = count($tags);
+                $per_page  = 30;
+                $num_call  = ceil($tag_count/$per_page);
+                for ($c = 0; $c < $num_call; $c++) {
+                    $start              = $c * $per_page;
+                    $tags_for_this_page = array_slice($tags, $start, $per_page);
+                    $response = $this->callCurl($config['blog_url'] . 'tags?per_page=' . $per_page . '&include=' . implode(',', $tags_for_this_page));
+                    $raw_tags = $response['body'] ?? [];
+                    foreach ($raw_tags as $tag) {
+                        if (isset($tag['id'], $tag['slug'])) {
+                            $tag_list[$tag['id']] = $tag['slug'];
+                        }
+                    }
                 }
             }
             // MEDIA
