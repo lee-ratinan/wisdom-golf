@@ -140,7 +140,7 @@ class Home extends BaseController
             $config  = $this->getBlogConfig($locale);
             // TAGS
             if (!empty($tags)) {
-                $response = $this->callCurl($config['blog_url'] . 'tags?include=' . implode(',', $tags));
+                $response = $this->callCurl($config['blog_url'] . 'tags?per_page=50&include=' . implode(',', $tags));
                 $raw_tags = $response['body'];
                 foreach ($raw_tags as $tag) {
                     $tag_list[$tag['id']] = $tag['slug'];
